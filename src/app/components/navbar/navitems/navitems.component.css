@@ -1,17 +1,17 @@
-.mat-toolbar-spacer {
-    flex: 1 1 auto;
+.navitem-icon {
+    width: 7vh;
 }
 
-.div-content-mat-list-date {
-    margin-left: 50px;
+.navitem-icon-bridge {
+    width: 100px;
 }
 
-.mat-list-content-date {
+.mat-list-content {
     margin: 0px !important;
     padding: 0px !important;
 }
 
-.mat-list-content-date-item {
+.mat-list-content-navitem-item {
     color: white;
     margin: 0px !important;
     padding: 0px !important;
@@ -19,3 +19,8 @@
     display: flex !important;
     justify-content: center !important;
 }
+
+
+/* .div-content-mat-list-date {
+    margin-left: 50px;
+} */
