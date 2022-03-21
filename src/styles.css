@@ -1,4 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.content-views {
+    background-image: url("../src/assets/img/backfox4.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.mat-toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+.navitem-icon-logo-fxnn,
+.navitem-icon-logo-cygnus {
+    width: 180px;
+    margin-bottom: 2px;
+}
+
+#carouselSlidesOnly {
+    width: 225px;
+}

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Inavtiems } from 'src/app/interfaces/inavtiems';
+import { ApirestService } from 'src/app/services/apirest.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,18 +16,26 @@ export class NavbarComponent implements OnInit {
   complete_date: any;
   complete_hour: any;
 
-
+  bridges: any = [];
+  weather: any = {};
+  dollar_exchange: any = {};
 
   navItems: Inavtiems[] = [];
 
-  constructor() { }
+  constructor(private apirest: ApirestService) { }
 
   ngOnInit(): void {
+    this.loadNavItems();
     this.updateDate();
 
     setInterval(() => {
       this.updateDate();
     }, 1000);
+
+
+    setInterval(() => {
+      this.loadNavItems();
+    }, 60000);
 
   }
 
@@ -55,6 +64,35 @@ export class NavbarComponent implements OnInit {
     const second = _seconds < 10 ? '0' + _seconds : _seconds.toString();
 
     this.complete_date = weekday + ' ' + day + ' ' + month + ' ' + year;
-    this.complete_hour = hour + ' : ' + minute +  ': ' + second + '  ' + ampm;
+    this.complete_hour = hour + ' : ' + minute + ': ' + second + '  ' + ampm;
+  }
+
+  private loadNavItems() {
+    this.apirest.getWeather().subscribe((data: any) => {
+      this.weather = data;
+    });
+
+    this.apirest.getDollarExchange().subscribe((data: any) => {
+      this.dollar_exchange = data;
+    });
+
+    this.apirest.getBridges().subscribe((data: any) => {
+      this.bridges = data;
+      this.loadCarousel();
+    });
+  }
+
+  private loadCarousel() {
+    setTimeout(() => {
+      try {
+        var myCarouseld = document.querySelector('#carouselSlidesOnly');
+        var carousel: any = null;
+        eval(`carousel = new bootstrap.Carousel(myCarouseld,{interval: 5000});`);
+      } catch (e) {
+      }
+    }, 1000);
+  }
+  getObjectKeysLenght(item: any) {
+    return Object.keys(item).length;
   }
 }

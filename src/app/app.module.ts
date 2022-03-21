@@ -4,18 +4,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { MosaicComponent } from './components/mosaic/mosaic.component';
+import { NavbarComponent } from './components/mosaic/navbar/navbar.component';
+import { NavitemsComponent } from './components/mosaic/navbar/navitems/navitems.component';
 import { ImportssharedModule } from './modules/importsshared/importsshared.module';
-import { NavitemsComponent } from './components/navbar/navitems/navitems.component';
+import { VideosComponent } from './components/videos/videos.component';
+import { NotconfiguredComponent } from './components/notconfigured/notconfigured.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import { CardsectionsComponent } from './components/mosaic/cardsections/cardsections.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    MosaicComponent,
     NavbarComponent,
-    NavitemsComponent 
+    NavitemsComponent,
+    VideosComponent,
+    NotconfiguredComponent,
+    LoadingComponent,
+    CardsectionsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
     AppRoutingModule,
     BrowserAnimationsModule,
     ImportssharedModule

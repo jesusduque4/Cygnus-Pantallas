@@ -1,0 +1,29 @@
+.card-sections-main {
+    height: 26.5vh !important;
+}
+
+.card-sections-title {
+    font-size: 1rem;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: justify;
+}
+
+.card-sections-text-content {
+    font-size: 1rem;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: justify;
+}
+
+.backcolorcards {
+    background: #DFE8F9;
+}
+
+.card-title {
+    color: #333333;
+    text-align: justify;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 5px !important;
+}

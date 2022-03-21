@@ -1,0 +1,25 @@
+<mat-toolbar color="primary" role="heading">
+    <img class="navitem-icon-logo-fxnn" src="../assets/img/LogoFoxconnCompleto.png" />
+
+    <span class="mat-toolbar-spacer"></span>
+    <app-navitems [row1]="complete_date" [row2]="complete_hour"></app-navitems>
+
+    <span class="mat-toolbar-spacer"></span>
+    <app-navitems *ngIf="getObjectKeysLenght(weather)>0" [classIcon]="''" [icon]="weather.icon" [row1]="weather.temp_c + ' °C'" [row2]="weather.temp_f +' °F'">
+    </app-navitems>
+
+    <span class="mat-toolbar-spacer"></span>
+    <app-navitems *ngIf="getObjectKeysLenght(dollar_exchange)>0" [icon]="'../assets/img/dollar.png'" [row1]="'$ ' +dollar_exchange.buy" [row2]="'$ ' +dollar_exchange.sell"></app-navitems>
+
+    <span class="mat-toolbar-spacer"></span>
+    <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let _bridges of bridges;let indexOfelement=index;" [ngClass]="indexOfelement===0?'active':''">
+                <app-navitems [icon]="'../assets/img/puente.png'" classIcon="navitem-icon-bridge" [row1]="_bridges.bridge" [row2]="_bridges.delay" class="p-0"></app-navitems>
+            </div>
+        </div>
+    </div>
+
+    <span class="mat-toolbar-spacer"></span>
+    <img class="navitem-icon-logo-cygnus" src="../assets/img/CyGNUS.png" />
+</mat-toolbar>

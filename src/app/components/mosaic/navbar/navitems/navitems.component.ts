@@ -14,6 +14,7 @@ export class NavitemsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    //console.log('OnInit NavItem');
   }
 
 }
