@@ -8,6 +8,7 @@ import { Imosaiccardsection } from 'src/app/interfaces/imosaiccardsection';
 })
 export class MosaicComponent implements OnInit {
   cardsections: Imosaiccardsection[] = [
+    { title: 'NOTICIAS', resourcename: 'news' },
     { title: 'NOTICIAS', resourcename: 'news' }
   ];
   constructor() { }

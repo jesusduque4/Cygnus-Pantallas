@@ -8,10 +8,10 @@ import { MosaicComponent } from './components/mosaic/mosaic.component';
 import { NavbarComponent } from './components/mosaic/navbar/navbar.component';
 import { NavitemsComponent } from './components/mosaic/navbar/navitems/navitems.component';
 import { ImportssharedModule } from './modules/importsshared/importsshared.module';
-import { VideosComponent } from './components/videos/videos.component';
 import { NotconfiguredComponent } from './components/notconfigured/notconfigured.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { CardsectionsComponent } from './components/mosaic/cardsections/cardsections.component';
+import { VideoplayerComponent } from './components/videoplayer/videoplayer.component';
 
 
 @NgModule({
@@ -20,10 +20,10 @@ import { CardsectionsComponent } from './components/mosaic/cardsections/cardsect
     MosaicComponent,
     NavbarComponent,
     NavitemsComponent,
-    VideosComponent,
     NotconfiguredComponent,
     LoadingComponent,
-    CardsectionsComponent
+    CardsectionsComponent,
+    VideoplayerComponent
   ],
   imports: [
     BrowserModule, 
