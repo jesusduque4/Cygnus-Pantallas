@@ -8,7 +8,6 @@ import { MosaicComponent } from './components/mosaic/mosaic.component';
 import { NavbarComponent } from './components/mosaic/navbar/navbar.component';
 import { NavitemsComponent } from './components/mosaic/navbar/navitems/navitems.component';
 import { ImportssharedModule } from './modules/importsshared/importsshared.module';
-import { NotconfiguredComponent } from './components/notconfigured/notconfigured.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { CardsectionsComponent } from './components/mosaic/cardsections/cardsections.component';
 import { VideoplayerComponent } from './components/videoplayer/videoplayer.component';
@@ -20,13 +19,12 @@ import { VideoplayerComponent } from './components/videoplayer/videoplayer.compo
     MosaicComponent,
     NavbarComponent,
     NavitemsComponent,
-    NotconfiguredComponent,
     LoadingComponent,
     CardsectionsComponent,
     VideoplayerComponent
   ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ImportssharedModule

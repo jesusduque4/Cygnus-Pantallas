@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" role="heading">
+<mat-toolbar class="sideBar" role="heading">
     <img class="navitem-icon-logo-fxnn" src="../assets/img/LogoFoxconnCompleto.png" />
 
     <span class="mat-toolbar-spacer"></span>
@@ -9,7 +9,7 @@
     </app-navitems>
 
     <span class="mat-toolbar-spacer"></span>
-    <app-navitems *ngIf="getObjectKeysLenght(dollar_exchange)>0" [icon]="'../assets/img/dollar.png'" [row1]="'$ ' +dollar_exchange.buy" [row2]="'$ ' +dollar_exchange.sell"></app-navitems>
+    <app-navitems [icon]="'../assets/img/dollar.png'"  classIcon="navitem-icon-dollar" [row1]="'' +(dollar_exchange.compra|currency)" [row2]="''+(dollar_exchange.venta| currency)"></app-navitems>
 
     <span class="mat-toolbar-spacer"></span>
     <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">

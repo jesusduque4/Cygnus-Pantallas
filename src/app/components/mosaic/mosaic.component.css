@@ -1,0 +1,23 @@
+.final {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.pantalla{
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.mediaZone{
+  height: 92vh;
+}
+
+.main{
+  height: 92vh;
+}
+
+.titleCards{
+  height: 4vh;
+}

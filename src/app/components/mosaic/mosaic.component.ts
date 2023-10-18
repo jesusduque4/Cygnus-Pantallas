@@ -7,13 +7,27 @@ import { Imosaiccardsection } from 'src/app/interfaces/imosaiccardsection';
   styleUrls: ['./mosaic.component.css']
 })
 export class MosaicComponent implements OnInit {
+  dollar: any;
+
+
   cardsections: Imosaiccardsection[] = [
     { title: 'NOTICIAS', resourcename: 'news' },
-    { title: 'NOTICIAS', resourcename: 'news' }
+ //   { title: 'VACANTES / AVISOS', resourcename: 'vacantes' },
+  //  { title: 'DOWNTIME', resourcename: 'downtime' }
   ];
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor() {
+
   }
 
-}
+  ngOnInit(): void {
+
+    }
+
+  }
+
+
+
+
+
+

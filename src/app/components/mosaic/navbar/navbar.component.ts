@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { objDollarExchange } from 'src/app/interfaces/inavtiems';
 import { Inavtiems } from 'src/app/interfaces/inavtiems';
 import { ApirestService } from 'src/app/services/apirest.service';
 
@@ -18,7 +19,10 @@ export class NavbarComponent implements OnInit {
 
   bridges: any = [];
   weather: any = {};
-  dollar_exchange: any = {};
+  dollar_exchange: objDollarExchange = {
+    venta: 0,
+    compra: 0
+  };
 
   navItems: Inavtiems[] = [];
 
@@ -73,7 +77,8 @@ export class NavbarComponent implements OnInit {
     });
 
     this.apirest.getDollarExchange().subscribe((data: any) => {
-      this.dollar_exchange = data;
+      this.dollar_exchange.venta = data.MXN;
+      this.dollar_exchange.compra =  data.MXN - (data.MXN*0.06);
     });
 
     this.apirest.getBridges().subscribe((data: any) => {

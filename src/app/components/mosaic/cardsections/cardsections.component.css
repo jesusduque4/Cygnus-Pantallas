@@ -1,6 +1,12 @@
 .card-sections-main {
-    height: 26.5vh !important;
+    height: 30vh !important;
 }
+
+.titleCards {
+  text-align: center;
+  font-family: sans-serif;
+}
+
 
 .card-sections-title {
     font-size: 1rem;
@@ -14,10 +20,6 @@
     margin-left: 5px;
     margin-right: 5px;
     text-align: justify;
-}
-
-.backcolorcards {
-    background: #DFE8F9;
 }
 
 .card-title {

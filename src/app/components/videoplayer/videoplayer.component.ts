@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ApirestService } from 'src/app/services/apirest.service';
+import { Media} from '../../interfaces/imosaiccardsection';
 
 @Component({
   selector: 'app-videoplayer',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoplayerComponent implements OnInit {
 
-  constructor() { }
+  mediaObjs: Media[] = [];
+
+  constructor(private apiservice: ApirestService) { }
 
   ngOnInit(): void {
+    debugger;
+    this.apiservice.getGenericData('media').subscribe((data: any) => {
+      debugger;
+      this.mediaObjs = data.Media;
+    });
+
+    
   }
 
 }

@@ -7,7 +7,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApirestService implements OnDestroy {
-  private URL_API: string = "http://localhost:8080/API/CyGNUS/Visuales";
+  //private URL_API: string = "https://apihpe.ecmms.com.mx/API/CyGNUS/Visuales";
+    private URL_API: string = "http://localhost:8081/API/CyGNUS/Visuales"
+
   //private URL_SOCKET: string = "ws://localhost:8080/WebSocket/WEBSOCKET";
   private ipclient: any;
 

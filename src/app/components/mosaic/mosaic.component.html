@@ -1,21 +1,25 @@
-<app-navbar></app-navbar>
-
-<div class="main p-0 m-0 w-100">
-
-    <div class="row p-0 m-0">
-
-        <div class="col-8 bg-danger">
-            <mat-list>
-                <mat-list-item routerLink="/mosaic/1">Video</mat-list-item>
-                <mat-list-item routerLink="/mosaic/2">Image</mat-list-item>
-            </mat-list>
-            <router-outlet></router-outlet>
-        </div>
-
-        <div class="col-4">
-            <app-cardsections *ngFor="let _cardsection of cardsections" [title]="_cardsection.title" [resourcename]="_cardsection.resourcename"></app-cardsections>
-        </div>
-
+<div class="pantalla">
+  <app-navbar></app-navbar>
+  <div class="main">
+    <div class="row datos">
+     <div class="col-9">
+       <div class="card mediaZone">
+         <div class="card-header titleCards">
+           <label style="margin-bottom: 0px; color: #A62639;">COMUNICACION ORGANIZACIONAL</label>
+         </div>
+         <div class="card-body">
+           <mat-list class="h-100">
+             <mat-list-item class="h-100">
+               <app-videoplayer class="w-100 h-100"></app-videoplayer>
+             </mat-list-item>
+           </mat-list>
+         </div>
+       </div>
+      </div>
+      <div class="col-3">
+        <app-cardsections *ngFor="let _cardsection of cardsections" [title]="_cardsection.title"
+          [resourcename]="_cardsection.resourcename"></app-cardsections>
+      </div>
     </div>
-
+  </div>
 </div>
