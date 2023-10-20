@@ -11,6 +11,7 @@ import { ImportssharedModule } from './modules/importsshared/importsshared.modul
 import { LoadingComponent } from './components/loading/loading.component';
 import { CardsectionsComponent } from './components/mosaic/cardsections/cardsections.component';
 import { VideoplayerComponent } from './components/videoplayer/videoplayer.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { VideoplayerComponent } from './components/videoplayer/videoplayer.compo
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    CommonModule,
     ImportssharedModule
   ],
   providers: [],
