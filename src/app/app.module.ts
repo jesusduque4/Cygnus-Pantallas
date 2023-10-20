@@ -12,6 +12,8 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { CardsectionsComponent } from './components/mosaic/cardsections/cardsections.component';
 import { VideoplayerComponent } from './components/videoplayer/videoplayer.component';
 import { CommonModule } from '@angular/common';
+import { IntervalPipe } from './pipes/interval.pipe';
+import { FormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -22,14 +24,16 @@ import { CommonModule } from '@angular/common';
     NavitemsComponent,
     LoadingComponent,
     CardsectionsComponent,
-    VideoplayerComponent
+    VideoplayerComponent,
+    IntervalPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CommonModule,
-    ImportssharedModule
+    ImportssharedModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

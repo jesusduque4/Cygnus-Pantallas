@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit,ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit,ElementRef, AfterViewChecked } from '@angular/core';
 import { ApirestService } from 'src/app/services/apirest.service';
 import { Media} from '../../interfaces/imosaiccardsection';
 
@@ -7,27 +7,34 @@ import { Media} from '../../interfaces/imosaiccardsection';
   templateUrl: './videoplayer.component.html',
   styleUrls: ['./videoplayer.component.css']
 })
-export class VideoplayerComponent implements AfterViewInit  {
+export class VideoplayerComponent implements AfterViewInit   {
   mediaObjs: Media[] = [];
   myCarousel = document.querySelector('#carouselExampleInterval')!
+  test: string = ""
   constructor(private apiservice: ApirestService) {
 
   }
 
+
   ngAfterViewInit (): void {
-    debugger;
     this.apiservice.getGenericData('media').subscribe((data: any) => {
       debugger;
       this.mediaObjs = data.Media;
     });
 
     setTimeout(() => {
+      let videoR = document.querySelectorAll('.video_div')[0] as HTMLVideoElement;
+      alert(videoR.duration);
+      videoR.play();
+     // let time:number = videoR.duration;
+
+
       this.myCarousel =  document.querySelector('#carouselExampleInterval')!
       debugger;
       this.myCarousel.addEventListener('slid.bs.carousel', () => {
         this.validVideo();
       });
-    }, 500);
+    }, 1000);
 
   }
 
@@ -43,8 +50,13 @@ export class VideoplayerComponent implements AfterViewInit  {
   darPlay(id:number){
     debugger;
     let videoR = document.querySelectorAll('.video_div')[id] as HTMLVideoElement;
+    let videoA = document.querySelectorAll('.video_div')[id-1] as HTMLVideoElement;
     if (videoR) {
+      let time = videoR.duration;
       videoR.play();
+    }
+    if (videoA) {
+      videoA.pause();
     }
   }
 }

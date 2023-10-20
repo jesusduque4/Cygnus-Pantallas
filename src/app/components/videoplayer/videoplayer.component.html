@@ -1,7 +1,7 @@
 
-<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" data-interval="50000">
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item" id="video" *ngFor="let media of mediaObjs; let i = index" [ngClass]="{'active': i === 0}">
+    <div class="carousel-item" id="video" *ngFor="let media of mediaObjs; let i = index" [ngClass]="{'active': i === 0}" [attr.data-bs-interval]="i | interval:5000" >
       <video class="video_div" muted controls  onloadedmetadata="this.muted = true">
         <source type="video/mp4" [src]="media.path">
       </video>
