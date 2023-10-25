@@ -8,4 +8,10 @@ export interface Media {
   id:   string;
   name: string;
   type: string;
+  time: string;
+}
+
+export interface timeVideo {
+  id:   number;
+  time: string;
 }

@@ -5,14 +5,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class IntervalPipe implements PipeTransform {
 
-  transform(index: number, tiempo: number): string {
+  transform(index: number, tiempo: string): string {
     let response:string = '';
     switch (index){
-      case 0:
-        response = '5000'
+      case index:
+        response = tiempo
         break;
       default:
-        response = tiempo.toString();
+        response = "100"
         break;
     }
     return response;
