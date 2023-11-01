@@ -76,9 +76,10 @@ export class NavbarComponent implements OnInit {
       this.weather = data;
     });
 
-    this.apirest.getDollarExchange().subscribe((data: any) => {
-      this.dollar_exchange.venta = data.MXN;
-      this.dollar_exchange.compra =  data.MXN - (data.MXN*0.06);
+    this.apirest.getDollarExchange().subscribe((respon: any) => {
+      debugger;
+      this.dollar_exchange.venta = respon.Dollar;
+      this.dollar_exchange.compra =  respon.Dollar - (respon.Dollar*0.03);
     });
 
     this.apirest.getBridges().subscribe((data: any) => {

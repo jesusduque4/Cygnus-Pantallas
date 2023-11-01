@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class ApirestService implements OnDestroy {
   //private URL_API: string = "https://apihpe.ecmms.com.mx/API/CyGNUS/Visuales";
     private URL_API: string = "http://localhost:8081/API/CyGNUS/Visuales"
+    private URL_API2: string = "https://10.19.17.34:9119/api/visuales"
 
   //private URL_SOCKET: string = "ws://localhost:8080/WebSocket/WEBSOCKET";
   private ipclient: any;
@@ -38,7 +39,7 @@ export class ApirestService implements OnDestroy {
   }
 
   public getDollarExchange() {
-    return this.http.get(`${this.URL_API}/dollar-exchange`);
+    return this.http.get(`${this.URL_API2}/dollar`);
   }
 
   public getBridges() {

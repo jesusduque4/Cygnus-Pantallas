@@ -18,7 +18,6 @@ export class VideoplayerComponent implements AfterViewInit   {
 
 
   ngAfterViewInit(): void {
-    debugger;
     const mediaLoad = {
       path: '../assets/img/CyGNUSblue.png',
       id: 'load',
@@ -33,8 +32,6 @@ export class VideoplayerComponent implements AfterViewInit   {
     });
 
     setTimeout(() => {
-      debugger;
-
       document.querySelectorAll('.video_div').forEach((element, index) => {
         let videoR = element as HTMLVideoElement;
         this.mediaObjs[index+1].time = (videoR.duration*1000).toString();
@@ -49,7 +46,6 @@ export class VideoplayerComponent implements AfterViewInit   {
   }
 
   validVideo(){
-    debugger;
     if (this.flagLoad === 0){
       this.mediaObjs.splice(0, 1);
       document.querySelectorAll('#video')[0].remove();
@@ -64,7 +60,6 @@ export class VideoplayerComponent implements AfterViewInit   {
   }
 
   darPlay(id:number){
-    debugger;
     let videoR = document.querySelectorAll('.video_div')[id] as HTMLVideoElement;
     let videoA = document.querySelectorAll('.video_div')[id-1] as HTMLVideoElement;
     if (videoR) {
