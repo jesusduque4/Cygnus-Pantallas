@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewInit,ElementRef, AfterViewChecked } from '@angular/core';
 import { ApirestService } from 'src/app/services/apirest.service';
-import { Media} from '../../interfaces/imosaiccardsection';
+import { Media } from 'src/app/interfaces/imosaiccardsection';
 
 
 @Component({

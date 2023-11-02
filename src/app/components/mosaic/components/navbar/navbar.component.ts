@@ -77,7 +77,6 @@ export class NavbarComponent implements OnInit {
     });
 
     this.apirest.getDollarExchange().subscribe((respon: any) => {
-      debugger;
       this.dollar_exchange.venta = respon.Dollar;
       this.dollar_exchange.compra =  respon.Dollar - (respon.Dollar*0.03);
     });

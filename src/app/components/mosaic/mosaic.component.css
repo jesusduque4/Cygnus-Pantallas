@@ -10,12 +10,8 @@
   overflow-x: hidden;
 }
 
-.mediaZone{
-  height: 92vh;
-}
-
 .main{
-  height: 92vh;
+  height: 100vh;
 }
 
 .titleCards{

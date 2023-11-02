@@ -11,11 +11,14 @@ body {
 }
 
 .content-views {
-    background-image: url("../src/assets/img/backfox4.png");
+    /* background-image: url("../src/assets/img/backfox4.png"); */
+    background-color: #19395A ;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .mat-toolbar-spacer {
