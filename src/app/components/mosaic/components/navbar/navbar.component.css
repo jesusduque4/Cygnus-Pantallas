@@ -1,5 +1,27 @@
-.sideBar{
-  background: #006464;
-  color: #fff;
-  height: 8vh;
+
+.navText {
+  display: inline-table;
+  color: #ffffff;
 }
+
+.icones{
+  height: 7vh;
+  width: 4rem;
+}
+.imgDollar {
+  width: 4rem;
+  margin-right: 5px;
+}
+
+.imgPuente {
+  width: 4rem;
+  margin-right: 5px;
+}
+
+.blocks{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+

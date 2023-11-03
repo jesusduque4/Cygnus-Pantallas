@@ -3,10 +3,6 @@
   background: linear-gradient(to top, rgb(199, 213, 255), rgb(25, 57, 90));
   overflow-y: hidden;
 }
- .header {
-  height: 7vh;
-  color: white;
-}
 
 .cuerpoMedia{
   height: 93vh;

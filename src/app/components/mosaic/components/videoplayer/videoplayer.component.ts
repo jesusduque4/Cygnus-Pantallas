@@ -27,7 +27,6 @@ export class VideoplayerComponent implements AfterViewInit   {
     };
 
     this.apiservice.getGenericData('media').subscribe((data: any) => {
-      debugger;
       this.mediaObjs = data.Media;
       this.mediaObjs = [mediaLoad, ...this.mediaObjs];
     });

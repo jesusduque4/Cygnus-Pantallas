@@ -1,25 +1,63 @@
-<mat-toolbar class="sideBar" role="heading">
-    <img class="navitem-icon-logo-fxnn" src="../assets/img/LogoFoxconnCompleto.png" />
 
-    <span class="mat-toolbar-spacer"></span>
-    <app-navitems [row1]="complete_date" [row2]="complete_hour"></app-navitems>
-
-    <span class="mat-toolbar-spacer"></span>
-    <app-navitems *ngIf="getObjectKeysLenght(weather)>0" [classIcon]="''" [icon]="weather.icon" [row1]="weather.temp_c + ' °C'" [row2]="weather.temp_f +' °F'">
-    </app-navitems>
-
-    <span class="mat-toolbar-spacer"></span>
-    <app-navitems [icon]="'../assets/img/dollar.png'"  classIcon="navitem-icon-dollar" [row1]="'' +(dollar_exchange.compra|currency)" [row2]="''+(dollar_exchange.venta| currency)"></app-navitems>
-
-    <span class="mat-toolbar-spacer"></span>
-    <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item" *ngFor="let _bridges of bridges;let indexOfelement=index;" [ngClass]="indexOfelement===0?'active':''">
-                <app-navitems [icon]="'../assets/img/puente.png'" classIcon="navitem-icon-bridge" [row1]="_bridges.bridge" [row2]="_bridges.delay" class="p-0"></app-navitems>
-            </div>
-        </div>
+<div class="row col-12">
+  <div class="col-1 blocks">
+    <img class="navitem-icon-logo-fxnn icones" src="../assets/img/LogoFoxconnCompleto.png" />
+  </div>
+  <div class="col-3 blocks">
+    <div *ngIf="getObjectKeysLenght(weather)>0">
+      <img [src]="weather.icon">
+      <div class="navText">
+        <h4> {{weather.temp_c}} °C / {{weather.temp_f}} °F </h4>
+      </div>
     </div>
+  </div>
+  <div class="col-3 blocks">
+    <div *ngIf="getObjectKeysLenght(dollar_exchange)>0">
+      <img src="../assets/img/dollar.png" class="imgDollar">
+      <div class="navText">
+        <h4> {{dollar_exchange.compra | currency}} / {{dollar_exchange.venta | currency}} </h4>
+      </div>
+    </div>
+  </div>
 
-    <span class="mat-toolbar-spacer"></span>
-    <img class="navitem-icon-logo-cygnus" src="../assets/img/CyGNUS.png" />
-</mat-toolbar>
+  <div class="col-4 blocks">
+    <div class="puentes w-100">
+      <div id="carouselSlidesOnly" class="carousel slide w-100" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item w-100" *ngFor="let _bridges of bridges;let indexOfelement=index;"
+            [ngClass]="indexOfelement===0?'active':''">
+            <img [src]="'../assets/img/puente.png'" class="imgPuente" classIcon="navitem-icon-bridge">
+            <div class="navText">
+              <h4>{{_bridges.bridge}} {{_bridges.delay}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-3">
+    <app-navitems [row1]="complete_date" [row2]="complete_hour"></app-navitems>
+  </div> -->
+</div>
+  <!-- <span class="mat-toolbar-spacer"></span>
+  <app-navitems *ngIf="getObjectKeysLenght(weather)>0" [classIcon]="''" [icon]="weather.icon"
+    [row1]="weather.temp_c + ' °C'" [row2]="weather.temp_f +' °F'">
+  </app-navitems>
+
+  <span class="mat-toolbar-spacer"></span>
+  <app-navitems [icon]="'../assets/img/dollar.png'" classIcon="navitem-icon-dollar"
+    [row1]="'' +(dollar_exchange.compra|currency)" [row2]="''+(dollar_exchange.venta| currency)"></app-navitems>
+
+  <span class="mat-toolbar-spacer"></span>
+  <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item" *ngFor="let _bridges of bridges;let indexOfelement=index;"
+        [ngClass]="indexOfelement===0?'active':''">
+        <app-navitems [icon]="'../assets/img/puente.png'" classIcon="navitem-icon-bridge" [row1]="_bridges.bridge"
+          [row2]="_bridges.delay" class="p-0"></app-navitems>
+      </div>
+    </div>
+  </div>
+
+  <span class="mat-toolbar-spacer"></span> -->
+
