@@ -27,22 +27,25 @@ export class VideoplayerComponent implements AfterViewInit   {
     };
 
     this.apiservice.getGenericData('media').subscribe((data: any) => {
+      debugger;
       this.mediaObjs = data.Media;
       this.mediaObjs = [mediaLoad, ...this.mediaObjs];
     });
 
     setTimeout(() => {
-      document.querySelectorAll('.video_div').forEach((element, index) => {
-        let videoR = element as HTMLVideoElement;
-        this.mediaObjs[index+1].time = (videoR.duration*1000).toString();
-      });
-
+      for (let index = 1; index < this.mediaObjs.length; index++) {
+        if (this.mediaObjs[index].type === 'Video'){
+          let videoR =  document.querySelectorAll('.video_div')[index-1] as HTMLVideoElement;
+          this.mediaObjs[index].time = (videoR.duration*1000).toString();
+        } else {
+          this.mediaObjs[index].time = '10000'
+        }
+      }
       this.myCarousel =  document.querySelector('#carouselExampleInterval')!
       this.myCarousel.addEventListener('slid.bs.carousel', () => {
         this.validVideo();
       });
-    }, 1000);
-
+    }, 1500);
   }
 
   validVideo(){
