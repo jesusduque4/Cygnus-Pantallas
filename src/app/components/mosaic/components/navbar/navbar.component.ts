@@ -9,12 +9,9 @@ import { ApirestService } from 'src/app/services/apirest.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  private daysArray = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
-  private monthsArray = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
   private date: any;
 
-  complete_date: any;
   complete_hour: any;
 
   bridges: any = [];
@@ -30,12 +27,6 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadNavItems();
-    this.updateDate();
-
-    setInterval(() => {
-      this.updateDate();
-    }, 1000);
-
 
     setInterval(() => {
       this.loadNavItems();
@@ -45,12 +36,6 @@ export class NavbarComponent implements OnInit {
 
   private updateDate() {
     this.date = new Date();
-
-
-    const weekday = this.daysArray[this.date.getDay()];
-    const day = this.date.getDate();
-    const month = this.monthsArray[this.date.getMonth()];
-    const year = this.date.getFullYear();
 
     const _hours = this.date.getHours(); // get the hours from the date
 
@@ -67,7 +52,6 @@ export class NavbarComponent implements OnInit {
     const _seconds = this.date.getSeconds();
     const second = _seconds < 10 ? '0' + _seconds : _seconds.toString();
 
-    this.complete_date = weekday + ' ' + day + ' ' + month + ' ' + year;
     this.complete_hour = hour + ' : ' + minute + ': ' + second + '  ' + ampm;
   }
 

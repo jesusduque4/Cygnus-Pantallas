@@ -1,12 +1,11 @@
 .card-sections-main {
-     height: 30vh !important;
+    height: 30vh !important;
     background-color: #132D48 ;
     color: white;
     border-radius: 14px;
 }
 
 .titleCards {
-  text-align: center;
   font-family: sans-serif;
 }
 

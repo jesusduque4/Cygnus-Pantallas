@@ -7,3 +7,21 @@
 .cuerpoMedia{
   height: 93vh;
 }
+
+.saludo {
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+  padding-left: 16px;
+}
+
+.completeDate {
+  color: white;
+  font-family: sans-serif;
+  padding-left: 16px;
+}
+
+
+.header {
+  height: 14vh;
+}

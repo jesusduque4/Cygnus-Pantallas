@@ -4,7 +4,16 @@
   display: block;
 }
 
-
 .bar{
   width: 96%
+}
+
+.cisne {
+  width: 227%;
+  margin-left: 940%;
+  margin-top: 12px;
+}
+
+.header {
+ margin-bottom: 35px;
 }

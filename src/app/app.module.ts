@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MosaicComponent } from './components/mosaic/mosaic.component';
 import { NavbarComponent } from './components/mosaic/components/navbar/navbar.component';
-import { NavitemsComponent } from './components/mosaic/components/navbar/navitems/navitems.component';
 import { ImportssharedModule } from './modules/importsshared/importsshared.module';
 import { LoadingComponent } from './components/loading/loading.component';
 import { CardsectionsComponent } from './components/mosaic/components/cardsections/cardsections.component';
@@ -23,7 +22,6 @@ import { RigthBarComponent } from './components/mosaic/components/rigth-bar/rigt
     AppComponent,
     MosaicComponent,
     NavbarComponent,
-    NavitemsComponent,
     LoadingComponent,
     CardsectionsComponent,
     VideoplayerComponent,
