@@ -8,7 +8,7 @@ import { Imosaiccardsection } from 'src/app/interfaces/imosaiccardsection';
 })
 export class RigthBarComponent implements OnInit {
   cardsections: Imosaiccardsection[] = [
-    { title: 'Noticias', resourcename: 'news' },
+    { title: 'NOTICIAS', resourcename: 'news' },
     { title: 'VACANTES / AVISOS', resourcename: 'vacantes' }
   // { title: 'DOWNTIME', resourcename: 'downtime' }
   ];

@@ -20,6 +20,37 @@ export class CardsectionsComponent implements OnInit {
         this.loadCarousel();
       });
     }
+
+    setTimeout(() => {
+      const carouselContainer = document.getElementById('carouselNoticias')!;
+      const scrollSpeed = 100;
+      let shouldResetScrollTop = false;
+
+      function scrollCarousel() {
+        const carouselHeight = carouselContainer.scrollHeight;
+        const currentScrollTop = carouselContainer.scrollTop;
+        let newScrollTop;
+
+        if (shouldResetScrollTop) {
+          newScrollTop = 0; // Reiniciar al principio
+          shouldResetScrollTop = false;
+        } else {
+          newScrollTop = currentScrollTop + 1;
+        }
+
+        if (newScrollTop >= carouselHeight) {
+          shouldResetScrollTop = true;
+        }
+
+        carouselContainer.scrollTop = newScrollTop;
+      }
+
+      setInterval(() => {
+        shouldResetScrollTop = true;
+      }, 4700);
+
+      setInterval(scrollCarousel, scrollSpeed);
+    }, 1000);
   }
 
   private loadCarousel() {
