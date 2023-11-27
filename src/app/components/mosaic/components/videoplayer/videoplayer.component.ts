@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit,ElementRef, AfterViewChecked } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { ApirestService } from 'src/app/services/apirest.service';
 import { Media } from 'src/app/interfaces/imosaiccardsection';
 
@@ -44,7 +44,7 @@ export class VideoplayerComponent implements AfterViewInit   {
       this.myCarousel.addEventListener('slid.bs.carousel', () => {
         this.validVideo();
       });
-    }, 1500);
+    }, 2000);
   }
 
   validVideo(){

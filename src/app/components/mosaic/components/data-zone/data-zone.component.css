@@ -1,6 +1,7 @@
 .mediaZone{
   height: 100vh;
-  background: linear-gradient(to top, rgb(199, 213, 255), rgb(25, 57, 90));
+  /* background: linear-gradient(to top, rgb(199, 213, 255), rgb(25, 57, 90)); */
+  background: linear-gradient(to top, rgb(199, 213, 255), #5792CE);
   overflow-y: hidden;
 }
 
@@ -18,7 +19,13 @@
 .completeDate {
   color: white;
   font-family: sans-serif;
-  padding-left: 16px;
+  padding-left: 30px;
+}
+
+.completeTime {
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
 }
 
 

@@ -10,6 +10,7 @@ export class ApirestService implements OnDestroy {
   //private URL_API: string = "https://apihpe.ecmms.com.mx/API/CyGNUS/Visuales";
     private URL_API: string = "http://localhost:8081/API/CyGNUS/Visuales"
     private URL_API2: string = "https://10.19.17.34:9119/api/visuales"
+    private URL_API3: string = "http://localhost:1991/api/visuales"
 
   //private URL_SOCKET: string = "ws://localhost:8080/WebSocket/WEBSOCKET";
   private ipclient: any;
@@ -35,7 +36,7 @@ export class ApirestService implements OnDestroy {
   }
 
   public getWeather() {
-    return this.http.get(`${this.URL_API}/weather`);
+    return this.http.get(`${this.URL_API2}/weather`);
   }
 
   public getDollarExchange() {
@@ -43,11 +44,11 @@ export class ApirestService implements OnDestroy {
   }
 
   public getBridges() {
-    return this.http.get(`${this.URL_API}/bridges`);
+    return this.http.get(`${this.URL_API3}/bridges`);
   }
 
   public getGenericData(resource_name: string) {
-    return this.http.get(`${this.URL_API}/${resource_name}`);
+    return this.http.get(`${this.URL_API3}/${resource_name}`);
   }
 
   // constructor(private http: HttpClient) {
