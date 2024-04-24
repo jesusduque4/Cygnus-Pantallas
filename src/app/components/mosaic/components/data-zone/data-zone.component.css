@@ -1,12 +1,14 @@
 .mediaZone{
-  height: 100vh;
+  height: 96vh;
   /* background: linear-gradient(to top, rgb(199, 213, 255), rgb(25, 57, 90)); */
-  background: linear-gradient(to top, rgb(199, 213, 255), #5792CE);
+    background: linear-gradient(to top, rgb(199, 213, 255), #5792CE);
+   /* background-image: url('src/assets/img/RainLeos.gif'); */
+
   overflow-y: hidden;
 }
 
 .cuerpoMedia{
-  height: 93vh;
+  height: 67vh;
 }
 
 .saludo {
@@ -26,6 +28,8 @@
   color: white;
   font-family: sans-serif;
   font-weight: bold;
+  justify-content: right;
+  display: flex;
 }
 
 

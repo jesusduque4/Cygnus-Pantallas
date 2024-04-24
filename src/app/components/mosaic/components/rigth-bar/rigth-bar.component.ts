@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Imosaiccardsection } from 'src/app/interfaces/imosaiccardsection';
+import { Imosaiccardsection } from 'src/app/interfaces/general';
 
 @Component({
   selector: 'mosaic-rigth-bar',
@@ -7,10 +7,19 @@ import { Imosaiccardsection } from 'src/app/interfaces/imosaiccardsection';
   styleUrls: ['./rigth-bar.component.css']
 })
 export class RigthBarComponent implements OnInit {
+
   cardsections: Imosaiccardsection[] = [
+    { title: 'ASISTENCIA', resourcename: 'asist' },
     { title: 'NOTICIAS', resourcename: 'news' },
-    { title: 'VACANTES / AVISOS', resourcename: 'vacantes' }
-  // { title: 'DOWNTIME', resourcename: 'downtime' }
+    { title: 'DEPORTES', resourcename: 'sports' }
+
+    // { title: 'VACANTES / AVISOS', resourcename: 'vacantes' },
+    // { title: 'DOWNTIME', resourcename: 'downtime' }
+  ];
+
+  mincardsections: Imosaiccardsection[] = [
+    { title: 'VACANTES / AVISOS', resourcename: 'vacantes' },
+    { title: 'DOWNTIME', resourcename: 'downtime' }
   ];
 
   constructor() { }

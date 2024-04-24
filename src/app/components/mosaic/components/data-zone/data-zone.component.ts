@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApirestService } from 'src/app/services/apirest.service';
 
 @Component({
   selector: 'data-zone',
@@ -14,15 +15,23 @@ export class DataZoneComponent implements OnInit {
   complete_date: any;
   complate_time: any;
 
+  weather: any = {};
 
-  constructor() { }
+  constructor(private apirest: ApirestService) { }
 
   ngOnInit(): void {
-    this.updateDate();
+    this.getWeather();
+
 
     setInterval(() => {
       this.updateDate();
     }, 1000);
+  }
+
+  getWeather(){
+    this.apirest.getWeather().subscribe((data:any) => {
+      this.weather = data;
+    });
   }
 
   updateDate(){
@@ -42,19 +51,26 @@ export class DataZoneComponent implements OnInit {
     const seconds = this.date.getSeconds().toString().padStart(2, '0');
 
     this.complate_time = hour+':'+minutes+':'+seconds
-      debugger;
-      if ( hour >= 6 && hour <= 18 ){
-        if (mediaZoneElement && saludo.textContent !== '¡Buenos Días!') {
-          mediaZoneElement.style.background = 'linear-gradient(to top, rgb(199, 213, 255), #5792CE);';
-          saludo.textContent = '¡Buenos Días!'
-        }
-      }else{
-        if (mediaZoneElement && saludo.textContent !== '¡Buenas Tardes!') {
-          mediaZoneElement.style.background = 'linear-gradient(to top, rgb(199, 213, 255), rgb(25, 57, 90))';
-          document.querySelector('.saludo')!.textContent = '¡Buenas Tardes!'
+       if ( hour >= 6 && hour <= 12 ){
+         if (mediaZoneElement && saludo.textContent !== '¡Buenos días!') {
+           mediaZoneElement.style.background = 'linear-gradient(to top, rgb(199, 213, 255), #5792CE);';
+           saludo.textContent = '¡Buenos días!'
+         }
+       }else{
+         if (mediaZoneElement && saludo.textContent !== '¡Buenas tardes!') {
+           mediaZoneElement.style.background = 'linear-gradient(to top, rgb(199, 213, 255), rgb(25, 57, 90))';
+           saludo.textContent = '¡Buenas tardes!'
+         }
+       }
 
-        }
-      }
+       if (this.weather.text){
+          if (this.weather.text.includes('rain')){
+            const imageName = 'RainLeos.gif';
+            mediaZoneElement.style.backgroundImage = `url(${imageName})`;
+          }
+       }
+
+
 
 
   }

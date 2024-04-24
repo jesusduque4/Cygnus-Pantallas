@@ -1,0 +1,83 @@
+
+<mat-card [attr.id]="title === 'NOTICIAS' ? 'carouselNoticias' : (title === 'DEPORTES' ? 'carouselDeportes' : null)" [ngClass]="title === 'ASISTENCIA' ? 'card-sections-graph m-0 p-0 mt-1' : title === 'NOTICIAS' || title === 'DEPORTES' ?  'card-sections-main' : 'min-card-sections'" style="overflow: hidden;">
+    <div class="card-header titleCards m-0 p-0">
+        <label class="card-title">
+          <i *ngIf="(title === 'NOTICIAS' ||title === 'DEPORTES')" [ngClass]="title === 'NOTICIAS' ? 'fa-solid fa-newspaper' : (title === 'DEPORTES' ? 'fas fa-baseball-ball' : '')"></i>
+          {{title}}
+        </label>
+    </div>
+    <!-- Seccion para el widget de noticias -->
+    <div *ngIf="title === 'NOTICIAS'">
+      <div [id]="'carouselSlides_'+resourcename" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+              <div class="carousel-item" *ngFor="let _item of items;let indexOfelement=index;" [ngClass]="indexOfelement===0?'active':''">
+                  <mat-card-title-group>
+                      <mat-card-title class="card-sections-text-content">{{_item.title}}</mat-card-title>
+                  </mat-card-title-group>
+                  <hr style="border: 1px solid #ddd; border-top: 1px solid #ddd; width: 85%; margin: 0 auto;">
+                  <br>
+                  <mat-card-content class="card-sections-text-content">
+                      {{_item.content}}
+                  </mat-card-content>
+                  <img style="margin-left: 5px; width: 226px; height: 127px;" [src]="_item.image" />
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <div *ngIf="title === 'DEPORTES'">
+      <div [id]="'carouselSlides_'+resourcename" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+              <div class="carousel-item" *ngFor="let _item of items;let indexOfelement=index;" [ngClass]="indexOfelement===0?'active':''">
+                  <mat-card-title-group>
+                      <mat-card-title class="card-sections-text-content">{{_item.new}}</mat-card-title>
+                  </mat-card-title-group>
+                  <hr style="border: 1px solid #ddd; border-top: 1px solid #ddd; width: 85%; margin: 0 auto;">
+                  <br>
+                  <mat-card-content class="card-sections-text-content">
+                      {{_item.description}}
+                  </mat-card-content>
+                  <img style="margin-left: 5px; width: 226px; height: 127px;" [src]="_item.img" />
+              </div>
+          </div>
+      </div>
+    </div>
+
+        <!-- Seccion para el widget de Asistencias -->
+    <div *ngIf="title === 'ASISTENCIA'">
+      <div [id]="'carouselSlides_'+resourcename" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item" *ngFor="let _item of asistHP; let id=index;" [ngClass]="id===0?'active':''">
+            <div class="row">
+              <h3 style="color: white; color: white;display: flex;justify-content: center;margin-bottom: 2%;">{{id | tittleGraph}} </h3>
+              <br>
+            </div>
+            <div class="row graphs col-12">
+              <div class="col-3">
+                  <canvas id='barHP{{id+1}}' height="{{ this.asistHP[id] }}"></canvas>
+                  <h3 class="puntaje">{{ this.asistHP[id] }}%</h3>
+                  <h5 class="dataLabel">HP</h5>
+              </div>
+              <div class="col-3">
+                  <canvas id='barMS{{id+1}}' height="{{ this.asistMS[id] }}"></canvas>
+                  <h3 class="puntajeMS">{{ this.asistMS[id] }}%</h3>
+                  <h5 class="dataLabelMS">MSFT</h5>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</mat-card>
+
+
+
+<!-- <mat-card [attr.id]="title === 'ASISTENCIA' ? 'graphAsist' : null" class="card-sections-main m-0 p-0 mt-1" style="overflow: hidden;">
+  <div class="card-header titleCards m-0 p-0">
+      <label class="card-title">
+        <i *ngIf="title === 'ASISTENCIA'" class="fa-solid fa-newspaper"></i>
+        {{title}}
+      </label>
+  </div>
+</mat-card> -->
+

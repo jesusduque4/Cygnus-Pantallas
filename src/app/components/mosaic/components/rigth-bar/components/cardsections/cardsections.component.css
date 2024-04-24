@@ -1,0 +1,105 @@
+/* Estilo para pantallas de 0 a 18 pulgadas */
+@media (max-width: 18in) {
+  .card-sections-main {
+      height: 26vh;
+      background-color: #132D48;
+      color: white;
+      border-radius: 14px;
+  }
+}
+
+/* Estilo para pantallas mayores de 18 pulgadas */
+@media (min-width: 18.1in) {
+  .card-sections-main {
+      height: 30vh;
+      background-color: #132D48;
+      color: white;
+      border-radius: 14px;
+  }
+}
+
+
+
+.min-card-sections {
+  background-color: #132D48 ;
+  color: white;
+  height: 15vh;
+  border-radius: 14px;
+}
+
+
+@media screen and (min-width: 20in)  {
+  .min-card-sections {
+    height: 17.5vh;
+  }
+}
+
+
+.card-sections-graph{
+  background-color: #19395A ;
+}
+
+.titleCards {
+  font-family: roboto;
+}
+
+.puntaje {
+  position: absolute;
+  top: 57%;
+  left: 19%;
+  color: white;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.puntajeMS {
+  position: absolute;
+  top: 57%;
+  left: 45%;
+  color: white;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.dataLabel {
+  position: absolute;
+  top: 76%;
+  left: 18%;
+  color: white;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.dataLabelMS {
+  position: absolute;
+  top: 77%;
+  left: 45%;
+  color: white;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+
+.graphs {
+  display: flex;
+  margin-bottom: 2px;
+
+}
+.card-title {
+    color: white;
+    text-align: justify;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 5px !important;
+}
+
+
+.card-sections-text-content {
+  font-size: 13px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: left;
+  color: #faffff;
+  font-family: roboto;
+  font-weight: normal;
+}

@@ -9,15 +9,12 @@
   overflow-y: hidden;
   overflow-x: hidden;
 }
-
-.main{
-  height: 100vh;
-}
-
 .titleCards{
   height: 4vh;
 }
 
 .rightBar{
   background-color: #19395A;
+  height: 96vh;
 }
+

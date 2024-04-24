@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { objDollarExchange } from 'src/app/interfaces/inavtiems';
-import { Inavtiems } from 'src/app/interfaces/inavtiems';
+import { objDollarExchange } from 'src/app/interfaces/general';
+import { Inavtiems } from 'src/app/interfaces/general';
 import { ApirestService } from 'src/app/services/apirest.service';
 
 @Component({
@@ -34,7 +34,7 @@ export class NavbarComponent implements OnInit {
 
   }
 
-  private updateDate() {
+  /*private updateDate() {
     this.date = new Date();
 
     const _hours = this.date.getHours(); // get the hours from the date
@@ -53,7 +53,7 @@ export class NavbarComponent implements OnInit {
     const second = _seconds < 10 ? '0' + _seconds : _seconds.toString();
 
     this.complete_hour = hour + ' : ' + minute + ': ' + second + '  ' + ampm;
-  }
+  }*/
 
   private loadNavItems() {
     this.apirest.getWeather().subscribe((data: any) => {
