@@ -56,7 +56,7 @@ export class CardsectionsComponent implements OnInit {
         this.createChart('barMS2', 'MSFT', this.asistMS[1]);
         this.createChart('barHP3', 'HP',   this.asistHP[2]);
         this.createChart('barMS3', 'MSFT', this.asistMS[2]);
-      }, 500);
+      }, 1000);
 
     }
 
