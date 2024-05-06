@@ -23,8 +23,9 @@ export class WebSocketComponent implements OnInit {
 
     const observer: Observer<any> = {
       next: (message) => {
-        debugger;
         console.log('Mensaje recibido:', message);
+        console.log('Mi ip:', this.ip);
+        debugger;
         if (message.length > 0){
           message.forEach((element:any) => {
             if (element.macaddress === this.ip){

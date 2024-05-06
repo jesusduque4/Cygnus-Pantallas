@@ -1,8 +1,17 @@
 .cartaInfo {
   border-radius: 50px;
-  margin-bottom: 7% !important;
+  margin-bottom: 5% !important;
   display: block;
 }
+
+@media screen and (max-width: 18in)  {
+  .cartaInfo {
+    border-radius: 50px;
+    margin-bottom: 4% !important;
+    display: block;
+  }
+}
+
 
 .bar{
   width: 95%;

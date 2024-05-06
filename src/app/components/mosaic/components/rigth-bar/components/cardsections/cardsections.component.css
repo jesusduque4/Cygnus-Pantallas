@@ -1,14 +1,166 @@
 /* Estilo para pantallas de 0 a 18 pulgadas */
-@media (max-width: 18in) {
+@media (max-width: 16in) {
   .card-sections-main {
-      height: 26vh;
+      height: 53vh;
       background-color: #132D48;
       color: white;
       border-radius: 14px;
   }
+
+
+  .min-card-sections {
+    height: 53vh;
+    background-color: #132D48;
+    color: white;
+    border-radius: 14px;
+  }
+
+  .card-sections-Noticias {
+    height: 53vh;
+    background-color: #132D48;
+    color: white;
+    border-radius: 14px;
+  }
+
+  .downtimes-card-sections-main{
+    display: none;
+  }
+
+  #carouselDeportes{
+    display: none;
+  }
+
+  .vacantes-min-card-sections-main{
+    display: none;
+  }
+
+  .vacantes-card-sections-main{
+    display: none;
+  }
+
+  #carouselItemsSport {
+    overflow: hidden; /* Oculta el desbordamiento del contenido */
+    height: 271px !important; /* Establece la altura máxima del div */
+  }
+
+  #carouselItemsNews {
+    overflow: hidden; /* Oculta el desbordamiento del contenido */
+    height: 271px !important; /* Establece la altura máxima del div */
+  }
+
+  #carouselItemsVacantes {
+    overflow: hidden; /* Oculta el desbordamiento del contenido */
+    height: 271px !important; /* Establece la altura máxima del div */
+  }
+
 }
 
-/* Estilo para pantallas mayores de 18 pulgadas */
+i.fas.fa-user-plus {
+  color: #57ff57;
+}
+
+.downtimes-container {
+  position: relative; /* Ajustamos la posición de los elementos relativamente */
+}
+
+.iconodown {
+  color: #fafd1d26;
+  font-size: 5rem;
+  display: flex; /* Cambiamos a "block" para que ocupe todo el ancho disponible */
+  justify-content: center;
+}
+
+.iconvacante {
+  color: #82d58826;
+  font-size: 5rem;
+  display: flex; /* Cambiamos a "block" para que ocupe todo el ancho disponible */
+  justify-content: center;
+  position: absolute;
+  margin-left: 64%;
+}
+
+#carouselSlides_downtimes {
+  top: 32%;
+  display: flex;
+  justify-content: center; /* Centramos horizontalmente */
+  position: absolute;
+  width: 93%;
+}
+
+
+.downtimes-card-sections-main{
+  height: 15vh;
+  background-color: #587899;
+  color: white;
+  border-radius: 14px;
+}
+
+.vacantes-card-sections-main{
+  height: 15vh;
+  background-color: #587899;
+  color: white;
+  border-radius: 14px;
+}
+
+.vacantes-min-card-sections-main{
+  height: 15vh;
+  background-color: #587899;
+  color: white;
+  border-radius: 14px;
+}
+
+@media screen and (display-mode: fullscreen) {
+  .downtimes-card-sections-main {
+    height: 16vh;
+  }
+  .iconodown{
+    font-size: 8rem;
+  }
+
+  .min-card-sections{
+    height: 24vh !important;
+  }
+
+  .card-sections-Noticias {
+    height: 33vh !important;
+
+  }
+
+  .card-sections-Noticias #carouselItemsNews {
+    overflow: hidden;
+    height: 270px !important;
+  }
+  .card-sections-Noticias {
+    height: 33vh !important;
+  }
+
+  .vacantes-min-card-sections-main{
+    height: 16vh !important;
+  }
+
+  .vacantes-min-card-sections-main{
+    height: 17vh !important;
+  }
+
+  .card-sections-main {
+    height: 32vh !important;
+  }
+
+
+  #carouselItemsSport {
+    height: 255px !important;
+  }
+
+  #carouselItemsNews {
+    height: 255px !important;
+  }
+
+  #carouselItemsVacantes {
+    height: 110px !important;
+  }
+
+}
+
 @media (min-width: 18.1in) {
   .card-sections-main {
       height: 30vh;
@@ -16,27 +168,31 @@
       color: white;
       border-radius: 14px;
   }
+
+  .card-sections-Noticias {
+    height: 30vh;
+    background-color: #132D48;
+    color: white;
+    border-radius: 14px;
 }
 
-
-
-.min-card-sections {
-  background-color: #132D48 ;
-  color: white;
-  height: 15vh;
-  border-radius: 14px;
 }
 
 
 @media screen and (min-width: 20in)  {
   .min-card-sections {
-    height: 17.5vh;
+    background-color: #132D48 ;
+    color: white;
+    height: 22vh;
+    border-radius: 14px;
   }
 }
 
-
 .card-sections-graph{
   background-color: #19395A ;
+  overflow: hidden;
+  height: 100%;
+  position: static;
 }
 
 .titleCards {
@@ -45,7 +201,7 @@
 
 .puntaje {
   position: absolute;
-  top: 57%;
+  top: 76%;
   left: 19%;
   color: white;
   transform: translate(-50%, -50%);
@@ -54,7 +210,7 @@
 
 .puntajeMS {
   position: absolute;
-  top: 57%;
+  top: 76%;
   left: 45%;
   color: white;
   transform: translate(-50%, -50%);
@@ -63,7 +219,7 @@
 
 .dataLabel {
   position: absolute;
-  top: 76%;
+  top: 88%;
   left: 18%;
   color: white;
   transform: translate(-50%, -50%);
@@ -72,17 +228,88 @@
 
 .dataLabelMS {
   position: absolute;
-  top: 77%;
+  top: 88%;
   left: 45%;
   color: white;
   transform: translate(-50%, -50%);
   margin: 0;
 }
 
+.titleDowntime {
+  font-size: 12px;
+}
+
+.contentDowntime {
+  font-size: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  width: 100%;
+  display: flow-root;
+}
+
+i.fa.fa-arrow-circle-down {
+  color: #fb2424;
+}
+
+
+#carouselItemsSport {
+  overflow: hidden;
+  height: 235px;
+}
+
+#carouselItemsNews {
+  overflow: hidden;
+  height: 235px;
+}
+
+#carouselItemsVacantes {
+  overflow: hidden;
+  height: 45px;
+}
+#carouselItemsVacantes{
+  height: 50px;
+}
+
+.scroll-container {
+  animation: none;
+}
+
+.scrolling {
+  animation: scrollContent 5s linear infinite;
+}
+
+@keyframes scrollContent {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(calc(-100% + 180px));
+  }
+}
+
+.scrollingVacantes {
+  animation: scrollContentVacantes 5s linear infinite;
+}
+
+@keyframes scrollContentVacantes {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+mat-card.card-sections-graph {
+  box-shadow: 0px 0px 4px 0px lightgrey;
+}
 
 .graphs {
   display: flex;
-  margin-bottom: 2px;
+  margin-bottom: 12px;
+  height: 103px;;
 
 }
 .card-title {
@@ -102,4 +329,13 @@
   color: #faffff;
   font-family: roboto;
   font-weight: normal;
+}
+
+.downtimesText {
+  font-size: 13px;
+  text-align: left;
+  color: #faffff;
+  font-family: roboto;
+  font-weight: normal;
+  margin-bottom: 5px !important;;
 }

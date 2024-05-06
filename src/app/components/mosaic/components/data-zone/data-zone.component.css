@@ -15,13 +15,13 @@
   color: white;
   font-weight: bold;
   font-family: sans-serif;
-  padding-left: 16px;
+  padding-left: 23px;
 }
 
 .completeDate {
   color: white;
   font-family: sans-serif;
-  padding-left: 30px;
+  padding-left: 36px;
 }
 
 .completeTime {
@@ -35,4 +35,5 @@
 
 .header {
   height: 14vh;
+  padding-left: 15px;
 }

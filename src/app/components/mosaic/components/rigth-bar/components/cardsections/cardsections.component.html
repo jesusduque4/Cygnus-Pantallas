@@ -1,8 +1,14 @@
 
-<mat-card [attr.id]="title === 'NOTICIAS' ? 'carouselNoticias' : (title === 'DEPORTES' ? 'carouselDeportes' : null)" [ngClass]="title === 'ASISTENCIA' ? 'card-sections-graph m-0 p-0 mt-1' : title === 'NOTICIAS' || title === 'DEPORTES' ?  'card-sections-main' : 'min-card-sections'" style="overflow: hidden;">
+<mat-card [attr.id]="title === 'NOTICIAS' ? 'carouselNoticias' : (title === 'DEPORTES' ? 'carouselDeportes' : null)"
+[ngClass]="title === 'ASISTENCIA' ? 'card-sections-graph m-0 p-0 mt-1' : title === 'DEPORTES' && (vacantes.length > 1 || downtimes.length > 1) ?  'min-card-sections' : (title === 'DOWNTIMES' ? 'downtimes-card-sections-main' :
+(title ==='VACANTES' ? 'vacantes-card-sections-main': (title === 'NOTICIAS' && downtimes.length > 1 && vacantes.length > 1  ? 'card-sections-Noticias' :
+ (title === 'NOTICIAS' && (vacantes.length > 1 || downtimes.length > 1) ? 'min-card-sections' : 'card-sections-main'))))"
+style="overflow: hidden;"
+*ngIf="showContent()">
     <div class="card-header titleCards m-0 p-0">
         <label class="card-title">
-          <i *ngIf="(title === 'NOTICIAS' ||title === 'DEPORTES')" [ngClass]="title === 'NOTICIAS' ? 'fa-solid fa-newspaper' : (title === 'DEPORTES' ? 'fas fa-baseball-ball' : '')"></i>
+          <i [ngClass]="title === 'NOTICIAS' ? 'fa-solid fa-newspaper' : (title === 'DEPORTES' ? 'fas fa-baseball-ball' : (title === 'DOWNTIMES' ? 'fa fa-arrow-circle-down' :
+          (title === 'VACANTES' ? 'fas fa-user-plus' : '')))"></i>
           {{title}}
         </label>
     </div>
@@ -10,16 +16,18 @@
     <div *ngIf="title === 'NOTICIAS'">
       <div [id]="'carouselSlides_'+resourcename" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
-              <div class="carousel-item" *ngFor="let _item of items;let indexOfelement=index;" [ngClass]="indexOfelement===0?'active':''">
+              <div id="carouselItemsNews" class="carousel-item" *ngFor="let _item of items;let indexOfelement=index;" [ngClass]="indexOfelement===0?'active':''">
+                <div class="scroll-container">
                   <mat-card-title-group>
-                      <mat-card-title class="card-sections-text-content">{{_item.title}}</mat-card-title>
-                  </mat-card-title-group>
-                  <hr style="border: 1px solid #ddd; border-top: 1px solid #ddd; width: 85%; margin: 0 auto;">
-                  <br>
-                  <mat-card-content class="card-sections-text-content">
-                      {{_item.content}}
-                  </mat-card-content>
-                  <img style="margin-left: 5px; width: 226px; height: 127px;" [src]="_item.image" />
+                        <mat-card-title class="card-sections-text-content">{{_item.title}}</mat-card-title>
+                    </mat-card-title-group>
+                    <hr style="border: 1px solid #ddd; border-top: 1px solid #ddd; width: 85%; margin: 0 auto;">
+                    <br>
+                    <mat-card-content class="card-sections-text-content">
+                        {{_item.content}}
+                    </mat-card-content>
+                    <img style="margin-left: 5px; width: 226px; height: 127px;" [src]="_item.image"/>
+                  </div>
               </div>
           </div>
       </div>
@@ -27,21 +35,66 @@
 
     <div *ngIf="title === 'DEPORTES'">
       <div [id]="'carouselSlides_'+resourcename" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-              <div class="carousel-item" *ngFor="let _item of items;let indexOfelement=index;" [ngClass]="indexOfelement===0?'active':''">
-                  <mat-card-title-group>
-                      <mat-card-title class="card-sections-text-content">{{_item.new}}</mat-card-title>
-                  </mat-card-title-group>
-                  <hr style="border: 1px solid #ddd; border-top: 1px solid #ddd; width: 85%; margin: 0 auto;">
-                  <br>
-                  <mat-card-content class="card-sections-text-content">
-                      {{_item.description}}
-                  </mat-card-content>
-                  <img style="margin-left: 5px; width: 226px; height: 127px;" [src]="_item.img" />
-              </div>
+        <div class="carousel-inner">
+            <div id="carouselItemsSport" class="carousel-item" *ngFor="let _item of items; let indexOfelement=index;" [ngClass]="indexOfelement===0?'active':''">
+                <div class="scroll-container">
+                    <mat-card-title-group>
+                        <mat-card-title class="card-sections-text-content">{{_item.new}}</mat-card-title>
+                    </mat-card-title-group>
+                    <hr style="border: 1px solid #ddd; border-top: 1px solid #ddd; width: 85%; margin: 0 auto;">
+                    <br>
+                    <mat-card-content class="card-sections-text-content">
+                        {{_item.description}}
+                    </mat-card-content>
+                    <img style="margin-left: 5px; width: 226px; height: 127px;" [src]="!_item.img.includes('.mp4') ? _item.img : '../assets/img/sportsNew.jpg'" />
+                </div>
+            </div>
+        </div>
+     </div>
+   </div>
+
+   <div *ngIf="title === 'DOWNTIMES'">
+    <label class="fas fa-exclamation-triangle iconodown"> </label>
+    <div [id]="'carouselSlides_'+resourcename" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+          <div class="carousel-item" *ngFor="let _downtime of downtimes; let id=index;"  [ngClass]="id===0?'active':''">
+            <h5 class="badge bg-dark downtimesText">{{_downtime.departamento}}</h5>
+             <h5 class="badge bg-danger col-12 downtimesText"> {{_downtime.problema}} </h5>
+            <div class="downtimesText">
+               <label class="fa fa-user"> </label> Atiende: {{_downtime.atiende}}
+            </div>
           </div>
       </div>
     </div>
+  </div>
+
+  <div *ngIf="title === 'VACANTES'" class="vacantes-carousel">
+    <label class="fas fas fa-user-plus iconvacante"> </label>
+    <div [id]="'carouselSlides_'+resourcename" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let vacante of vacantes; let id=index;" [ngClass]="id===0 ? 'active' : ''">
+          <h3 class="vacante-titulo" style="margin-left: 4px;">{{ vacante.titulo }}</h3>
+          <ul id="carouselItemsVacantes" >
+            <div class="requisitos-lista">
+
+              <div *ngFor="let requisito of vacante.requisitos; let i=index">
+                <div class="scroll-container">
+                  <li class="requisito-item">
+                    {{ requisito.requisito }}{{ vacante.requisitos[i+1] ? ', ' + vacante.requisitos[i+1].requisito + '.' : '.' }}
+                  </li>
+               </div>
+              </div>
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
 
         <!-- Seccion para el widget de Asistencias -->
     <div *ngIf="title === 'ASISTENCIA'">
@@ -49,7 +102,7 @@
         <div class="carousel-inner">
           <div class="carousel-item" *ngFor="let _item of asistHP; let id=index;" [ngClass]="id===0?'active':''">
             <div class="row">
-              <h3 style="color: white; color: white;display: flex;justify-content: center;margin-bottom: 2%;">{{id | tittleGraph}} </h3>
+              <h3 style="color: white; color: white;display: flex;margin-bottom: 1%; margin-left: 1%;">{{id | tittleGraph}} </h3>
               <br>
             </div>
             <div class="row graphs col-12">

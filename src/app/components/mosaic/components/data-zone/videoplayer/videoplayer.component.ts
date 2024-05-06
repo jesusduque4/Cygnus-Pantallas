@@ -14,6 +14,7 @@ export class VideoplayerComponent implements AfterViewInit   {
   myCarousel = document.querySelector('#carouselExampleInterval')!
   flagLoad: number = 0;
   countTime: number = 0;
+  ip = '';
 
   constructor(private apiservice: ApirestService) {
 
@@ -29,7 +30,11 @@ export class VideoplayerComponent implements AfterViewInit   {
       time: ''
     };
 
-    this.apiservice.getGenericData('media').subscribe((data: any) => {
+    this.apiservice.getGenericData('getIP').subscribe((data:any)=>{
+      this.ip = data.clientIP;
+    });
+
+    this.apiservice.getMedia(this.ip).subscribe((data: any) => {
       this.mediaObjs = data.Media;
       this.mediaObjs = [mediaLoad, ...this.mediaObjs];
     });
@@ -52,9 +57,9 @@ export class VideoplayerComponent implements AfterViewInit   {
         });
       }
 
-      setTimeout(() => {
+    /*  setTimeout(() => {
         location.reload();
-      }, this.countTime);
+      }, this.countTime);*/
 
 
       this.myCarousel =  document.querySelector('#carouselExampleInterval')!
@@ -67,7 +72,6 @@ export class VideoplayerComponent implements AfterViewInit   {
   }
 
   validVideo(){
-    console.log('count');
     if (this.flagLoad === 0){
       this.mediaObjs.splice(0, 1);
       document.querySelectorAll('#video')[0].remove();

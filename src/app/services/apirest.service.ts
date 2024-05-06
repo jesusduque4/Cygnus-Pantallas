@@ -10,7 +10,7 @@ export class ApirestService implements OnDestroy {
   //private URL_API: string = "https://apihpe.ecmms.com.mx/API/CyGNUS/Visuales";
     private URL_API: string = "http://localhost:8081/API/CyGNUS/Visuales" // Spring
     private URL_API2: string = "https://10.19.17.34:9119/api/visuales" // UAT - Node
-    private URL_API3: string = "http://localhost:1991/api/visuals"    // Local - Node
+    private URL_API3: string = "http://localhost:9119/api/visuales"    // Local - Node
     private URL_API4: string = "https://10.19.17.34:1991/api/visuales" // PRD -  Node
 
   //private URL_SOCKET: string = "ws://localhost:8080/WebSocket/WEBSOCKET";
@@ -30,12 +30,6 @@ export class ApirestService implements OnDestroy {
     //this.subject.complete();
   }
 
-  public getIPClient() {
-    this.http.get(`${this.URL_API}/ipclient`).subscribe((data: any) => {
-      this.ipclient = data.ipclient;
-    });
-  }
-
   public getWeather() {
     return this.http.get(`${this.URL_API3}/weather`);
   }
@@ -46,6 +40,10 @@ export class ApirestService implements OnDestroy {
 
   public getBridges() {
     return this.http.get(`${this.URL_API3}/bridges`);
+  }
+
+  public getMedia(ip: string) {
+    return this.http.get(`${this.URL_API3}/media?param=${ip}`);
   }
 
   public getGenericData(resource_name: string) {

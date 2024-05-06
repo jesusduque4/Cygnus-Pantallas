@@ -3,6 +3,10 @@ import { ApirestService } from 'src/app/services/apirest.service';
 import  {Chart, ChartConfiguration, ChartType } from 'chart.js/auto';
 import 'chartjs-plugin-datalabels';
 
+
+declare const bootstrap: any; // Asegúrate de que Bootstrap esté disponible globalmente
+
+
 @Component({
   selector: 'app-cardsections',
   templateUrl: './cardsections.component.html',
@@ -12,6 +16,8 @@ export class CardsectionsComponent implements OnInit {
   @Input() title = '';
   @Input() resourcename = '';
   items: any = [];
+  downtimes: any = [];
+  vacantes: any = [];
 
   asistHP: any = ['','','']
   asistMS: any = ['','','']
@@ -32,22 +38,90 @@ export class CardsectionsComponent implements OnInit {
             }
         });
       });
-
-
-
     });
-
-
   }
 
   ngOnInit(): void {
+
+   // if (this.resourcename === 'downtimes' || this.resourcename === 'sports'){
+      this.apirest.getGenericData('downtimes').subscribe((data: any) => {
+        this.downtimes = data;
+      });
+ //   }
+
+  //  if (this.resourcename === 'vacantes' || this.resourcename === 'sports'){
+      this.apirest.getGenericData('vacantes').subscribe((data: any) => {
+        debugger;
+        if (data[0].type){
+          this.vacantes = data;
+        }
+      });
+  //  }
+
     if (this.resourcename === 'news' || this.resourcename === 'sports') {
       this.apirest.getGenericData(this.resourcename).subscribe((data: any) => {
-        this.items = data;
-        this.loadCarousel();
+          this.items = data;
       });
 
+      setTimeout(() => {
+        function applyScrollLogic() {
 
+          const carouselContainerSports = document.getElementById('carouselSlides_sports')!;
+
+            if ( carouselContainerSports){
+              const carouselItemsSports = carouselContainerSports.querySelectorAll('.carousel-item')!;
+
+              carouselItemsSports.forEach(item => {
+                const contentContainer = item.querySelector('.scroll-container')!;
+                const carouselHeight = carouselContainerSports.clientHeight;
+                const contentHeight = contentContainer.scrollHeight;
+
+                if (contentHeight > carouselHeight) {
+                    contentContainer.classList.add('scrolling');
+                } else {
+                    contentContainer.classList.remove('scrolling');
+                }
+             });
+           }
+
+          const carouselContainerNews = document.getElementById('carouselSlides_news')!;
+          const carouselItemsNews = carouselContainerNews.querySelectorAll('.carousel-item')!;
+
+          carouselItemsNews.forEach(item => {
+            const contentContainerNews = item.querySelector('.scroll-container')!;
+            const carouselHeightNews = carouselContainerNews.clientHeight;
+            const contentHeightNews = contentContainerNews.scrollHeight;
+
+            if (contentHeightNews > carouselHeightNews) {
+                contentContainerNews.classList.add('scrolling');
+            } else {
+                contentContainerNews.classList.remove('scrolling');
+            }
+          });
+
+          const carouselContainerVacantes = document.getElementById('carouselSlides_vacantes')!;
+          if(carouselContainerVacantes){
+            const carouselItemsVacantes = carouselContainerVacantes.querySelectorAll('.requisitos-lista ')!;
+
+              carouselItemsVacantes.forEach(item => {
+                  const contentContainerVacantes = item.querySelector('.scroll-container')!;
+                  const contentHeightVacantes = contentContainerVacantes.scrollHeight;
+
+                  if (contentHeightVacantes > 15) {
+                    contentContainerVacantes.parentElement!.parentElement!.classList.add('scrollingVacantes');
+                  } else {
+                    contentContainerVacantes.parentElement!.parentElement!.classList.remove('scrollingVacantes');
+                  }
+              });
+          }
+        }
+        applyScrollLogic();
+
+        setInterval(() => {
+          applyScrollLogic();
+        }, 5000);
+
+      }, 1000);
 
       setTimeout(() => {
         this.createChart('barHP1', 'HP',   this.asistHP[0]);
@@ -60,74 +134,42 @@ export class CardsectionsComponent implements OnInit {
 
     }
 
-    setTimeout(() => {
-      const carouselContainerNews = document.getElementById('carouselNoticias')!;
-      const carouselContainerSports = document.getElementById('carouselDeportes')!;
-      const scrollSpeed = 100;
-      let shouldResetScrollTopNews = false;
-      let shouldResetScrollTopSports = false;
-
-      function scrollCarouselNews() {
-        const carouselHeight = carouselContainerNews.scrollHeight;
-        const currentScrollTop = carouselContainerNews.scrollTop;
-        let newScrollTop;
-
-        if (shouldResetScrollTopNews) {
-          newScrollTop = 0; // Reiniciar al principio
-          shouldResetScrollTopNews = false;
-        } else {
-          newScrollTop = currentScrollTop + 1;
-        }
-
-        if (newScrollTop >= carouselHeight) {
-          shouldResetScrollTopNews = true;
-        }
-
-        carouselContainerNews.scrollTop = newScrollTop;
-      }
-
-      function scrollCarouselSports() {
-        const carouselHeight = carouselContainerSports.scrollHeight;
-        const currentScrollTop = carouselContainerSports.scrollTop;
-        let newScrollTop;
-
-        if (shouldResetScrollTopSports) {
-          newScrollTop = 0; // Reiniciar al principio
-          shouldResetScrollTopSports = false;
-        } else {
-          newScrollTop = currentScrollTop + 1;
-        }
-
-        if (newScrollTop >= carouselHeight) {
-          shouldResetScrollTopSports = true;
-        }
-
-        carouselContainerSports.scrollTop = newScrollTop;
-      }
-
-      setInterval(() => {
-        shouldResetScrollTopNews = true;
-        shouldResetScrollTopSports = true;
-      }, 5000);
-
-      setInterval(scrollCarouselNews, scrollSpeed);
-      setInterval(scrollCarouselSports, scrollSpeed);
-    }, 800);
-  }
-
-  private loadCarousel() {
-    if (this.resourcename.length > 0) {
+    if (this.resourcename === 'downtimes'){
       setTimeout(() => {
-        try {
-          var myCarousel = document.querySelector(`#carouselSlides_${this.resourcename}`);
-          var carousel: any = null;
-          eval(`carousel = new bootstrap.Carousel(myCarousel,{interval: 5000});`);
-        } catch (e) {
+        var myCarousel = document.querySelector('#carouselSlides_downtimes')!
+        if(myCarousel){
+          var carousel = new bootstrap.Carousel(myCarousel)
         }
       }, 1000);
     }
+
+    if (this.resourcename === 'vacantes'){
+      setTimeout(() => {
+        var myCarousel = document.querySelector('#carouselSlides_vacantes')!
+        if(myCarousel){
+          var carousel = new bootstrap.Carousel(myCarousel)
+        }
+      }, 1000);
+    }
+
   }
 
+
+  showContent(): boolean {
+    if (this.title === 'NOTICIAS' || this.title === 'ASISTENCIA' ) {
+      return true;
+    }
+    if (this.title === 'DOWNTIMES' && this.downtimes.length > 0) {
+      return true;
+    }
+    if (this.title === 'VACANTES' && this.vacantes.length > 0) {
+      return true;
+    }
+    if (this.title === 'DEPORTES' && (this.vacantes.length < 1 || this.downtimes.length < 1)) {
+      return true;
+    }
+    return false;
+  }
 
 
   private createChart(id: string, labels: string, dataValue: number) {
@@ -137,7 +179,6 @@ export class CardsectionsComponent implements OnInit {
       existingChart.destroy(); // Destruir el gráfico existente si existe
     }
 
-    const barThickness = 20; // Valor base del grosor de la barra
     const data = {
       labels: [labels],
       datasets: [{
@@ -151,54 +192,54 @@ export class CardsectionsComponent implements OnInit {
   };
   const maxHeight = 100; // Altura máxima del canvas cuando el valor es 100%
 
-const config: ChartConfiguration<'bar'> = {
-    type: 'bar',
-    data: data,
-    options: {
-        plugins: {
-            legend: {
-                display: false,
-                position: 'top',
-            },
-        },
-        scales: {
-            x: {
-                display: false,
-                ticks: {
-                    color: 'white',
-                },
-            },
-            y: {
-                display: false,
-                min: 0,
-                max: 100,
-            },
-        },
-        layout: {
-            padding: {
-                top: 10
-            }
-        },
-        responsive: true, // Permite que el gráfico sea responsive
-        maintainAspectRatio: false, // Evita que el gráfico mantenga un aspect ratio predeterminado
-        aspectRatio: 3, // Relación de aspecto del gráfico (ajusta según sea necesario)
-        onResize: function(chart, size) { // Ajusta el tamaño del canvas al redimensionar
-            const canvas = chart.canvas;
-            canvas.style.height = maxHeight + 'px';
-            canvas.style.width = 'auto';
-        }
-    },
-};
+  const config: ChartConfiguration<'bar'> = {
+      type: 'bar',
+      data: data,
+      options: {
+          plugins: {
+              legend: {
+                  display: false,
+                  position: 'top',
+              },
+          },
+          scales: {
+              x: {
+                  display: false,
+                  ticks: {
+                      color: 'white',
+                  },
+              },
+              y: {
+                  display: false,
+                  min: 0,
+                  max: 100,
+              },
+          },
+          layout: {
+              padding: {
+                  top: 10
+              }
+          },
+          responsive: true, // Permite que el gráfico sea responsive
+          maintainAspectRatio: false, // Evita que el gráfico mantenga un aspect ratio predeterminado
+          aspectRatio: 3, // Relación de aspecto del gráfico (ajusta según sea necesario)
+          onResize: function(chart, size) { // Ajusta el tamaño del canvas al redimensionar
+              const canvas = chart.canvas;
+              canvas.style.height = maxHeight + 'px';
+              canvas.style.width = 'auto';
+          }
+      },
+  };
 
 
-    const ctx = document.getElementById(id) as HTMLCanvasElement | null;
+  const ctx = document.getElementById(id) as HTMLCanvasElement | null;
 
-    if (ctx) {
-      return new Chart<'bar'>(ctx, config);
-    }
-    return null;
+  if (ctx) {
+    return new Chart<'bar'>(ctx, config);
+  }
+  return null;
+
 }
-
 
 
 }
