@@ -1,16 +1,33 @@
-- Crear Trigger de la cygnus devices
+- Crear Triggers de la cygnus devices
 
-CREATE TRIGGER visuals_refresh 
-ON cygnus_devices 
-AFTER UPDATE  AS  BEGIN      
-	IF EXISTS (SELECT 1 FROM inserted WHERE Refresh = 1) 	
-	BEGIN
-   		EXEC peo_visualesAPI_sel_sp 'Exec_refresh';
- 	END  
-END;      
+	CREATE TRIGGER visuals_refresh 
+	ON cygnus_devices 
+	AFTER UPDATE  AS  BEGIN      
+		IF EXISTS (SELECT 1 FROM inserted WHERE Refresh = 1) 	
+		BEGIN
+   			EXEC peo_visualesAPI_sel_sp 'Exec_refresh';
+ 		END  
+	END;      
+
+	
+	ALTER TRIGGER visuals_pausaActiva
+	ON cygnus_devices
+	AFTER UPDATE AS BEGIN
+   		IF EXISTS (SELECT 1 FROM inserted WHERE activebreak = 1)
+    		BEGIN
+        		EXEC peo_visualesAPI_sel_sp 'Exec_activeBreak';
+    		END
+	END;
+      
 
 - Crear SP: peo_visualesAPI_sel_sp - cambiar Liga de API
 
 - Crear APIs en 10.19.17.34 
 
 - Cambiar todo donde diga localhost (Websocket-component y en la API)
+
+Modificar SP cygnus_comunicacion_sel_sp en trantype GET-MEDIA
+- Agregar pausaActiva
+
+Modificar tablas SQLServer
+- ALTER TABLE cygnus_devices ADD pausaActiva BIT

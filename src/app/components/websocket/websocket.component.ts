@@ -19,19 +19,29 @@ export class WebSocketComponent implements OnInit {
       this.ip = data.clientIP;
     });
 
-    this.socket$ = new WebSocketSubject('ws://localhost:1992');
+    //this.socket$ = new WebSocketSubject('wss://10.19.17.34:9229');
+    this.socket$ = new WebSocketSubject('ws://localhost:9229');
 
     const observer: Observer<any> = {
       next: (message) => {
-        console.log('Mensaje recibido:', message);
-        console.log('Mi ip:', this.ip);
         debugger;
-        if (message.length > 0){
-          message.forEach((element:any) => {
-            if (element.macaddress === this.ip){
-              location.reload();
-            }
-          });
+        console.log('Mensaje recibido:', message);
+        if (message.refresh){
+          if (message.refresh.length > 0){
+            message.refresh.forEach((element:any) => {
+              if (element.IP === this.ip){
+                location.reload();
+              }
+            });
+          }
+        } else if (message.activeBreaks){
+          if (message.activeBreaks.length > 0){
+            message.activeBreaks.forEach((element:any) => {
+              if (element.IP === this.ip){
+                window.location.href = 'http://localhost:4200/activeBreaks';
+              }
+            });
+          }
         }
       },
       error: (error) => console.error('Error en la conexión:', error),

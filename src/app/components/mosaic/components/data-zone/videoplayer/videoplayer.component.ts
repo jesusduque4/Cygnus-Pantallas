@@ -35,7 +35,11 @@ export class VideoplayerComponent implements AfterViewInit   {
     });
 
     this.apiservice.getMedia(this.ip).subscribe((data: any) => {
-      this.mediaObjs = data.Media;
+      debugger;
+      this.mediaObjs = data.Media.filter((mediaItem: any)=> {
+        return mediaItem.type !== 'pausaActiva';
+      });
+     // this.mediaObjs = data.Media;
       this.mediaObjs = [mediaLoad, ...this.mediaObjs];
     });
 
@@ -57,7 +61,7 @@ export class VideoplayerComponent implements AfterViewInit   {
         });
       }
 
-    /*  setTimeout(() => {
+      /*setTimeout(() => {
         location.reload();
       }, this.countTime);*/
 

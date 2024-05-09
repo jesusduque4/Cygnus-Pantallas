@@ -1,0 +1,15 @@
+.video_div{
+  width: 178vh;
+  height: 96vh;
+  justify-content: center;
+  display: flex;
+}
+
+.divVideo{
+  justify-content: center;
+  display: flex;
+}
+
+.view{
+  overflow-y: hidden;
+}

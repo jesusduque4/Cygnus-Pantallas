@@ -19,6 +19,8 @@ import { MarquesinaComponent } from './components/mosaic/components/marquesina/m
 import { RigthBarComponent } from './components/mosaic/components/rigth-bar/rigth-bar.component';
 import { WebSocketComponent } from './components/websocket/websocket.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { activeBreaksComponent } from './components/activeBreaks/activeBreaks.component';
+import { MarqueeComponent } from './components/activeBreaks/components/marquee/marquee.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     CardsectionsComponent,
     VideoplayerComponent,
     IntervalPipe,
+    activeBreaksComponent,
+    MarqueeComponent,
     tittleGraph,
     DataZoneComponent,
     MarquesinaComponent,

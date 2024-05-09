@@ -50,7 +50,7 @@ export class CardsectionsComponent implements OnInit {
  //   }
 
   //  if (this.resourcename === 'vacantes' || this.resourcename === 'sports'){
-      this.apirest.getGenericData('vacantes').subscribe((data: any) => {
+      this.apirest.getGenericData('vacancies').subscribe((data: any) => {
         debugger;
         if (data[0].type){
           this.vacantes = data;
