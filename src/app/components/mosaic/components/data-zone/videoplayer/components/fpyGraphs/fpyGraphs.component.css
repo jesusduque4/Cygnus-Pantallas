@@ -1,0 +1,32 @@
+.leftGraph {
+  margin-left: 15px;
+  width: 49%;
+}
+
+.rightGraph {
+  width: 49%;
+}
+
+canvas{
+  background: rgb(71 71 71 / 14%);
+}
+
+
+/*
+
+@media screen and (min-width: 20in)  {
+  #Today_Assembly_Commit{
+    width: 800px !important;
+    height: 720px !important;
+  }
+}
+
+
+  @media screen and (display-mode: fullscreen) {
+    #Today_Assembly_Commit{
+      width: 800px !important;
+      height: 850px !important;
+    }
+
+  }
+*/

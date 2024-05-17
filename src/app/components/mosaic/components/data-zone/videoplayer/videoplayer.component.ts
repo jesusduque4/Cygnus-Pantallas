@@ -1,7 +1,8 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { ApirestService } from 'src/app/services/apirest.service';
-import { Media } from 'src/app/interfaces/general';
-import { elements } from 'chart.js';
+import { Media, graph } from 'src/app/interfaces/general';
+import { otherGraph, otherGraph2, fpyGraph, fpyGraph2, fpyGraph3 } from './shared'
+
 
 
 @Component({
@@ -9,7 +10,7 @@ import { elements } from 'chart.js';
   templateUrl: './videoplayer.component.html',
   styleUrls: ['./videoplayer.component.css']
 })
-export class VideoplayerComponent implements AfterViewInit   {
+export class VideoplayerComponent implements OnInit   {
   mediaObjs: Media[] = [];
   myCarousel = document.querySelector('#carouselExampleInterval')!
   flagLoad: number = 0;
@@ -20,11 +21,11 @@ export class VideoplayerComponent implements AfterViewInit   {
 
   }
 
-
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     const mediaLoad = {
       path: '../assets/img/CyGNUSblue.png',
       id: 'load',
+      id2: '',
       name: 'Logo',
       type: 'Imagen',
       time: ''
@@ -34,22 +35,27 @@ export class VideoplayerComponent implements AfterViewInit   {
       this.ip = data.clientIP;
     });
 
+
+
     this.apiservice.getMedia(this.ip).subscribe((data: any) => {
-      debugger;
       this.mediaObjs = data.Media.filter((mediaItem: any)=> {
         return mediaItem.type !== 'pausaActiva';
       });
-     // this.mediaObjs = data.Media;
-      this.mediaObjs = [mediaLoad, ...this.mediaObjs];
+      this.mediaObjs = [mediaLoad, fpyGraph, fpyGraph2, fpyGraph3, otherGraph, otherGraph2, ...this.mediaObjs ];
+
+//      this.mediaObjs = [ otherGraph2 ];
+
+
     });
 
     setTimeout(() => {
       for (let index = 1; index < this.mediaObjs.length; index++) {
         if (this.mediaObjs[index].type === 'Video'){
-          let videoR =  document.querySelectorAll('.video_div')[index-1] as HTMLVideoElement;
-          this.mediaObjs[index].time = (videoR.duration*1000).toString();
+         let divMedia = document.querySelectorAll('.data-item')[index];
+         let videoR = divMedia.querySelector('.video_div') as HTMLVideoElement;
+         this.mediaObjs[index].time = (videoR.duration*1000).toString();
         } else {
-          this.mediaObjs[index].time = '10000'
+          this.mediaObjs[index].time = '7000'
         }
       }
 
@@ -66,12 +72,11 @@ export class VideoplayerComponent implements AfterViewInit   {
       }, this.countTime);*/
 
 
-      this.myCarousel =  document.querySelector('#carouselExampleInterval')!
+      this.myCarousel =  document.querySelector('#carouselExampleInterval')!   // DESCOMENTER ESTE QUE INICIA
       this.myCarousel.addEventListener('slid.bs.carousel', () => {
         this.validVideo();
       });
-    }, 2000);
-
+    }, 1500);
 
   }
 
@@ -82,7 +87,7 @@ export class VideoplayerComponent implements AfterViewInit   {
 
       this.flagLoad = 1
     }
-    document.querySelectorAll('#video').forEach((element, index) => {
+    document.querySelectorAll('.data-item').forEach((element, index) => {
       if (element.classList.contains('active')){
         this.darPlay(index);
       }
@@ -90,14 +95,15 @@ export class VideoplayerComponent implements AfterViewInit   {
   }
 
   darPlay(id:number){
-    let videoR = document.querySelectorAll('.video_div')[id] as HTMLVideoElement;
-    let videoA = document.querySelectorAll('.video_div')[id-1] as HTMLVideoElement;
-    if (videoR) {
-      videoR.play();
-    }
-    if (videoA) {
-      videoA.pause();
-      videoA.currentTime = 0;
+    let mediaActual = document.querySelectorAll('.data-item')[id];
+    let data = mediaActual.querySelector('.video_div') as HTMLVideoElement
+    if (data){
+      data.currentTime = 0;
+      data.play();
     }
   }
+
+
+
+
 }

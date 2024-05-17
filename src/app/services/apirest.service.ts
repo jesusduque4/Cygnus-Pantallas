@@ -54,5 +54,9 @@ export class ApirestService implements OnDestroy {
     return this.http.get(`${this.URL_API3}/attendance`);
   }
 
+  public getGraphData(graph_name: string) {
+    return this.http.get(`${this.URL_API3}/graphs?param=${graph_name}`);
+  }
+
 
 }

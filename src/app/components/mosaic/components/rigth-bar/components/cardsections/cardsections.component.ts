@@ -51,7 +51,6 @@ export class CardsectionsComponent implements OnInit {
 
   //  if (this.resourcename === 'vacantes' || this.resourcename === 'sports'){
       this.apirest.getGenericData('vacancies').subscribe((data: any) => {
-        debugger;
         if (data[0].type){
           this.vacantes = data;
         }
@@ -119,7 +118,7 @@ export class CardsectionsComponent implements OnInit {
 
         setInterval(() => {
           applyScrollLogic();
-        }, 5000);
+        }, 1000);
 
       }, 1000);
 
@@ -130,7 +129,7 @@ export class CardsectionsComponent implements OnInit {
         this.createChart('barMS2', 'MSFT', this.asistMS[1]);
         this.createChart('barHP3', 'HP',   this.asistHP[2]);
         this.createChart('barMS3', 'MSFT', this.asistMS[2]);
-      }, 1000);
+      }, 2000);
 
     }
 

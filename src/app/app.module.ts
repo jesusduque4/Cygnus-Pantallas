@@ -21,32 +21,34 @@ import { WebSocketComponent } from './components/websocket/websocket.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { activeBreaksComponent } from './components/activeBreaks/activeBreaks.component';
 import { MarqueeComponent } from './components/activeBreaks/components/marquee/marquee.component';
+import { FpyGraphsComponent } from './components/mosaic/components/data-zone/videoplayer/components/fpyGraphs/fpyGraphs.component';
 
 @NgModule({
   declarations: [
+    activeBreaksComponent,
     AppComponent,
+    CardsectionsComponent,
+    DataZoneComponent,
+    FpyGraphsComponent,
+    IntervalPipe,
+    LoadingComponent,
+    MarqueeComponent,
+    MarquesinaComponent,
     MosaicComponent,
     NavbarComponent,
-    LoadingComponent,
-    CardsectionsComponent,
-    VideoplayerComponent,
-    IntervalPipe,
-    activeBreaksComponent,
-    MarqueeComponent,
-    tittleGraph,
-    DataZoneComponent,
-    MarquesinaComponent,
-    WebSocketComponent,
+    RigthBarComponent,
     SpinnerComponent,
-    RigthBarComponent
+    tittleGraph,
+    VideoplayerComponent,
+    WebSocketComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    BrowserModule,
     CommonModule,
-    ImportssharedModule,
-    FormsModule
+    FormsModule,
+    ImportssharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,7 +12,7 @@ export class IntervalPipe implements PipeTransform {
         response = tiempo
         break;
       default:
-        response = "100"
+        response = "5000"
         break;
     }
     return response;

@@ -66,7 +66,7 @@ export class DataZoneComponent implements OnInit {
        if (this.weather.text){
           if (this.weather.text.includes('rain')){
             const imageName = 'RainLeos.gif';
-            mediaZoneElement.style.backgroundImage = `url(${imageName})`;
+            mediaZoneElement.style.backgroundImage = `url(assets/img/${imageName}`;
           }
        }
 

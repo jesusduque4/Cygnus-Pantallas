@@ -29,9 +29,9 @@ export class activeBreaksComponent implements OnInit {
         videoActiveBreak.play();
       const duration = videoActiveBreak.duration*1000;
 
-    /*  setTimeout(()=> {
+      setTimeout(()=> {
         window.location.href = 'http://localhost:4200/mosaic';
-      }, duration)*/
+      }, duration)
 
       }
     },500)

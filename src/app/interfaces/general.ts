@@ -6,6 +6,7 @@ export interface Imosaiccardsection {
 export interface Media {
 path: string;
 id:   string;
+id2?: string;
 name: string;
 type: string;
 time: string;
@@ -28,3 +29,7 @@ venta: number;
 compra: number;
 }
 
+export interface graph{
+  name: string;
+  measure: number;
+}
