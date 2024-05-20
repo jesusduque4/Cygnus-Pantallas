@@ -37,7 +37,7 @@ export class MosaicComponent implements OnInit {
       setTimeout(() => {
         countRefresh = 0;
         checkAndRefresh();
-      }, 3500);
+      }, 3000);
     }
 
   }

@@ -25,7 +25,7 @@
       <div id="carouselSlidesOnly" class="carousel slide w-100" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item w-100" *ngFor="let _bridges of bridges;let indexOfelement=index;"
-            [ngClass]="indexOfelement===0?'active':''">
+            [ngClass]="indexOfelement===0?'active':''"  data-bs-interval="3000">
             <img [src]="'../assets/img/puente.png'" class="imgPuente" classIcon="navitem-icon-bridge">
             <div class="navText">
               <h4>{{_bridges.bridge}} {{_bridges.delay}}</h4>

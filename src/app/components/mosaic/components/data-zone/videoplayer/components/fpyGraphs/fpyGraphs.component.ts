@@ -39,7 +39,7 @@ export class FpyGraphsComponent implements OnInit {
         'Assembly Summary (Yesterday)': otherGraph2
       };
 
-      this.apiservice.getGraphData('FPY_ASSEMBLY').subscribe((data: any) => {
+      this.apiservice.getGraphData().subscribe((data: any) => {
         data.forEach((element: any) => {
           const reportName = element.ReportName;
           debugger;
