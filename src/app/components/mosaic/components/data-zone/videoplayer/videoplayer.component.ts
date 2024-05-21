@@ -23,12 +23,12 @@ export class VideoplayerComponent implements OnInit   {
 
   ngOnInit(): void {
     const mediaLoad = {
-      path: '../assets/img/CyGNUSblue.png',
+      path: 'Videos/CyGNUSblue.png',
       id: 'load',
       id2: '',
       name: 'Logo',
       type: 'Imagen',
-      time: ''
+      time: '7000'
     };
 
     this.apiservice.getGenericData('getIP').subscribe((data:any)=>{
@@ -42,10 +42,6 @@ export class VideoplayerComponent implements OnInit   {
         return mediaItem.type !== 'pausaActiva';
       });
       this.mediaObjs = [mediaLoad, fpyGraph, fpyGraph2, fpyGraph3, otherGraph, otherGraph2, ...this.mediaObjs ];
-
-//      this.mediaObjs = [ otherGraph2 ];
-
-
     });
 
     setTimeout(() => {

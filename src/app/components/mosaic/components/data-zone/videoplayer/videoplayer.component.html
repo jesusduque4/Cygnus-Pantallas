@@ -6,12 +6,11 @@
       </ng-container>
       <ng-container *ngIf="media.type === 'Video'">
         <video class="video_div" muted controls onloadedmetadata="this.muted = true">
-          <!-- <source type="video/mp4" [src]="'../assets/'+media.path"> -->
-          <source type="video/mp4" [src]="'C:/Users/jesusduque/Documents/Angular/'+media.path">
+          <source type="video/mp4" [src]="'http://localhost:2323/'+media.path">
         </video>
       </ng-container>
       <ng-container *ngIf="media.type === 'Imagen'">
-        <img [src]="'../assets/'+media.path" class="imagen_div w-100">
+        <img [src]="'http://localhost:2323/'+media.path" class="imagen_div w-100">
       </ng-container>
     </div>
   </div>

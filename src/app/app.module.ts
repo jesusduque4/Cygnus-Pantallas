@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MosaicComponent } from './components/mosaic/mosaic.component';
 import { NavbarComponent } from './components/mosaic/components/navbar/navbar.component';
 import { ImportssharedModule } from './modules/importsshared/importsshared.module';
-import { LoadingComponent } from './components/loading/loading.component';
 import { CardsectionsComponent } from './components/mosaic/components/rigth-bar/components/cardsections/cardsections.component';
 import { VideoplayerComponent } from './components/mosaic/components/data-zone/videoplayer/videoplayer.component';
 import { CommonModule } from '@angular/common';
@@ -22,6 +21,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { activeBreaksComponent } from './components/activeBreaks/activeBreaks.component';
 import { MarqueeComponent } from './components/activeBreaks/components/marquee/marquee.component';
 import { FpyGraphsComponent } from './components/mosaic/components/data-zone/videoplayer/components/fpyGraphs/fpyGraphs.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,6 @@ import { FpyGraphsComponent } from './components/mosaic/components/data-zone/vid
     DataZoneComponent,
     FpyGraphsComponent,
     IntervalPipe,
-    LoadingComponent,
     MarqueeComponent,
     MarquesinaComponent,
     MosaicComponent,
@@ -48,6 +47,7 @@ import { FpyGraphsComponent } from './components/mosaic/components/data-zone/vid
     BrowserModule,
     CommonModule,
     FormsModule,
+    RouterModule,
     ImportssharedModule
   ],
   providers: [],

@@ -149,7 +149,6 @@ updateOtherGraph = (graph:any, category:string, measureLabel:string, measure: st
 
 
   private createFpyChart(id: string, name:string, goal: string, fpy: string, labels: string[], color: string[], bordesColor: string[] ,dataValues: number[]) {
-    const maxHeight = '1000';
 
     const existingChart = Chart.getChart(id); // Obtener el gráfico existente si lo hay
     if (existingChart) {
@@ -252,11 +251,6 @@ updateOtherGraph = (graph:any, category:string, measureLabel:string, measure: st
           }
         },
         responsive: true,
-        onResize: function (chart, size) {
-          const canvas = chart.canvas;
-          canvas.style.height = maxHeight + 'px';
-          canvas.style.width = 'auto';
-        }
       },
       plugins: [ChartDataLabels]
     };
@@ -276,8 +270,6 @@ private createOtherChart(id: string, name:string, labels: string[], legends: str
   if (existingChart) {
       existingChart.destroy();
   }
-
-  const maxHeight = '1000';
   const actualData = dataValues.map(values => values[0]);
   const commitData = dataValues.map(values => values[1]);
 
@@ -359,11 +351,6 @@ private createOtherChart(id: string, name:string, labels: string[], legends: str
         }
       },
       responsive: true,
-      onResize: function (chart, size) {
-        const canvas = chart.canvas;
-        canvas.style.height = maxHeight + 'px';
-        canvas.style.width = 'auto';
-      }
     },
     plugins: [ChartDataLabels]
   };
