@@ -46,6 +46,7 @@ export class VideoplayerComponent implements OnInit   {
 
     setTimeout(() => {
       for (let index = 1; index < this.mediaObjs.length; index++) {
+        debugger;
         if (this.mediaObjs[index].type === 'Video'){
          let divMedia = document.querySelectorAll('.data-item')[index];
          let videoR = divMedia.querySelector('.video_div') as HTMLVideoElement;
@@ -65,7 +66,7 @@ export class VideoplayerComponent implements OnInit   {
 
       setTimeout(() => {
         location.reload();
-      }, this.countTime);
+      }, (this.countTime-1000));
 
 
       this.myCarousel =  document.querySelector('#carouselExampleInterval')!   // DESCOMENTER ESTE QUE INICIA
