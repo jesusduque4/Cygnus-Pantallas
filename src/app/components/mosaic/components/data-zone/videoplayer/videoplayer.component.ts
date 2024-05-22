@@ -63,9 +63,9 @@ export class VideoplayerComponent implements OnInit   {
         });
       }
 
-      /*setTimeout(() => {
+      setTimeout(() => {
         location.reload();
-      }, this.countTime);*/
+      }, this.countTime);
 
 
       this.myCarousel =  document.querySelector('#carouselExampleInterval')!   // DESCOMENTER ESTE QUE INICIA
