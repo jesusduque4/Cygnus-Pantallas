@@ -42,7 +42,6 @@ export class FpyGraphsComponent implements OnInit {
       this.apiservice.getGraphData().subscribe((data: any) => {
         data.forEach((element: any) => {
           const reportName = element.ReportName;
-          debugger;
           if (fpyGraphs[reportName]){
             const graph = fpyGraphs[reportName];
             if (graph) {
@@ -115,7 +114,6 @@ export class FpyGraphsComponent implements OnInit {
 
 
 updateOtherGraph = (graph:any, category:string, measureLabel:string, measure: string, title: string, reportName: string) => {
-    debugger;
       if (category === 'PPS') {
         graph.name = title;
         if (measureLabel === 'ACTUAL' || measureLabel === 'SHIPPED') graph.ppsActual = measure;
