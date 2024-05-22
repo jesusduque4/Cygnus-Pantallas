@@ -16,7 +16,6 @@ export class MosaicComponent implements OnInit {
   ngOnInit(): void {
       let countRefresh = 0; // Tiempo inicial de espera
       const checkAndRefresh = () => {
-        debugger;
         if (document.querySelector('.completeDate')!.textContent === ''){
           countRefresh += 1000;
         }

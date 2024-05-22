@@ -31,31 +31,31 @@ export class ApirestService implements OnDestroy {
   }
 
   public getWeather() {
-    return this.http.get(`${this.URL_API3}/weather`);
+    return this.http.get(`${this.URL_API2}/weather`);
   }
 
   public getDollarExchange() {
-    return this.http.get(`${this.URL_API3}/dollar`);
+    return this.http.get(`${this.URL_API2}/dollar`);
   }
 
   public getBridges() {
-    return this.http.get(`${this.URL_API3}/bridges`);
+    return this.http.get(`${this.URL_API2}/bridges`);
   }
 
   public getMedia(ip: string) {
-    return this.http.get(`${this.URL_API3}/media?param=${ip}`);
+    return this.http.get(`${this.URL_API2}/media?param=${ip}`);
   }
 
   public getGenericData(resource_name: string) {
-    return this.http.get(`${this.URL_API3}/${resource_name}`);
+    return this.http.get(`${this.URL_API2}/${resource_name}`);
   }
 
   public getAttendance() {
-    return this.http.get(`${this.URL_API3}/attendance`);
+    return this.http.get(`${this.URL_API2}/attendance`);
   }
 
   public getGraphData() {
-    return this.http.get(`${this.URL_API3}/graphs`);
+    return this.http.get(`${this.URL_API2}/graphs`);
   }
 
 
