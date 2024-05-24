@@ -171,7 +171,7 @@ updateOtherGraph = (graph:any, category:string, measureLabel:string, measure: st
           borderSkipped: true,
           data: dataValues.map(() => 0), // Coloca ceros para no mostrar las barras
           backgroundColor: 'red',
-          label: fpy+'%',
+          label: 'FPY '+fpy+'%',
           hidden: true
         }
       ]

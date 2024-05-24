@@ -62,6 +62,27 @@ export class CardsectionsComponent implements OnInit {
           this.items = data;
       });
 
+
+      setTimeout(() => {
+        const vacantes = document.querySelector(".vacantes-card-sections-main");
+        const downtimes = document.querySelector(".downtimes-card-sections-main");
+        if (vacantes || downtimes) {
+            const noticias = document.querySelector("#carouselNoticias");
+            if (noticias) {
+                noticias.classList.add("hidden");
+            }
+
+            if (vacantes) {
+                vacantes.classList.add("adjusted-height");
+            }
+
+            if (downtimes) {
+                downtimes.classList.add("adjusted-height");
+            }
+        }
+      }, 1000);
+
+
       setTimeout(() => {
         function applyScrollLogic() {
 
@@ -139,7 +160,7 @@ export class CardsectionsComponent implements OnInit {
         if(myCarousel){
           var carousel = new bootstrap.Carousel(myCarousel)
         }
-      }, 1000);
+      }, 5000);
     }
 
     if (this.resourcename === 'vacantes'){
@@ -148,7 +169,7 @@ export class CardsectionsComponent implements OnInit {
         if(myCarousel){
           var carousel = new bootstrap.Carousel(myCarousel)
         }
-      }, 1000);
+      }, 5000);
     }
 
   }

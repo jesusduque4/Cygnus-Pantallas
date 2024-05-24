@@ -31,22 +31,24 @@ export class VideoplayerComponent implements OnInit   {
       time: '7000'
     };
 
+
+
     this.apiservice.getGenericData('getIP').subscribe((data:any)=>{
       this.ip = data.clientIP;
     });
 
-
-
+    setTimeout(() => {
     this.apiservice.getMedia(this.ip).subscribe((data: any) => {
       this.mediaObjs = data.Media.filter((mediaItem: any)=> {
-        return mediaItem.type !== 'pausaActiva';
+        return mediaItem.type === 'Video' || mediaItem.type === 'Imagen';
       });
       this.mediaObjs = [mediaLoad, fpyGraph, fpyGraph2, fpyGraph3, otherGraph, otherGraph2, ...this.mediaObjs ];
     });
+  }, 1000);
+
 
     setTimeout(() => {
       for (let index = 1; index < this.mediaObjs.length; index++) {
-        debugger;
         if (this.mediaObjs[index].type === 'Video'){
          let divMedia = document.querySelectorAll('.data-item')[index];
          let videoR = divMedia.querySelector('.video_div') as HTMLVideoElement;
@@ -66,14 +68,14 @@ export class VideoplayerComponent implements OnInit   {
 
       setTimeout(() => {
         location.reload();
-      }, (this.countTime-1000));
+      }, (this.countTime-5000));
 
 
-      this.myCarousel =  document.querySelector('#carouselExampleInterval')!   // DESCOMENTER ESTE QUE INICIA
+      this.myCarousel =  document.querySelector('#carouselExampleInterval')!
       this.myCarousel.addEventListener('slid.bs.carousel', () => {
         this.validVideo();
       });
-    }, 1500);
+    }, 2000);
 
   }
 
