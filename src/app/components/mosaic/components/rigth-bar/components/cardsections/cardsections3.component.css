@@ -1,0 +1,144 @@
+.titleCards {
+  font-family: roboto;
+}
+
+.puntaje {
+  position: absolute;
+  top: 76%;
+  left: 19%;
+  color: white;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.puntajeMS {
+  position: absolute;
+  top: 76%;
+  left: 45%;
+  color: white;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.dataLabel {
+  position: absolute;
+  top: 88%;
+  left: 18%;
+  color: white;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.dataLabelMS {
+  position: absolute;
+  top: 88%;
+  left: 45%;
+  color: white;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.titleDowntime {
+  font-size: 12px;
+}
+
+.contentDowntime {
+  font-size: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  width: 100%;
+  display: flow-root;
+}
+
+svg.svg-inline--fa.fa-circle-arrow-down {
+  color: red;
+}
+
+#carouselItemsSport {
+  overflow: hidden;
+  height: 235px;
+}
+
+#carouselItemsNews {
+  overflow: hidden;
+  height: 235px;
+}
+
+#carouselItemsVacantes {
+  overflow: hidden;
+  height: 45px;
+}
+#carouselItemsVacantes{
+  height: 50px;
+}
+
+.scroll-container {
+  animation: none;
+}
+
+.scrolling {
+  animation: scrollContent 5s linear infinite;
+}
+
+@keyframes scrollContent {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(calc(-100% + 180px));
+  }
+}
+
+.scrollingVacantes {
+  animation: scrollContentVacantes 5s linear infinite;
+}
+
+@keyframes scrollContentVacantes {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+mat-card.card-sections-graph {
+  box-shadow: 0px 0px 4px 0px lightgrey;
+}
+
+.graphs {
+  display: flex;
+  margin-bottom: 12px;
+  height: 103px;;
+
+}
+.card-title {
+    color: white;
+    text-align: justify;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: system-ui;
+    margin: 5px !important;
+}
+
+
+.card-sections-text-content {
+  font-size: 13px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: left;
+  color: #faffff;
+  font-family: Roboto, sans-serif;
+  font-weight: normal;
+}
+
+.downtimesText {
+  font-size: 13px;
+  text-align: left;
+  color: #faffff;
+  font-family: Roboto, sans-serif;
+  font-weight: normal;
+  margin-bottom: 5px !important;;
+}
