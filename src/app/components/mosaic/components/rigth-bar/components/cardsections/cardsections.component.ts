@@ -10,7 +10,7 @@ declare const bootstrap: any; // Asegúrate de que Bootstrap esté disponible gl
 @Component({
   selector: 'app-cardsections',
   templateUrl: './cardsections.component.html',
-  styleUrls: ['./cardsections.component.css']
+  styleUrls: ['./cardsections.component.css','./cardsections2.component.css','./cardsections3.component.css']
 })
 export class CardsectionsComponent implements OnInit {
   @Input() title = '';
