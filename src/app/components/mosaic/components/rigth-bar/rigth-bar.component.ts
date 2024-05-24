@@ -16,10 +16,6 @@ export class RigthBarComponent implements OnInit {
     { title: 'DEPORTES', resourcename: 'sports' }
   ];
 
-  mincardsections: Imosaiccardsection[] = [
-    { title: 'VACANTES / AVISOS', resourcename: 'vacantes' },
-    { title: 'DOWNTIME', resourcename: 'downtime' }
-  ];
 
   constructor() { }
 

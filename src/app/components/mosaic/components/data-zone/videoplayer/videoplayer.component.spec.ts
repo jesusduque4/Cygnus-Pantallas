@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VideoplayerComponent } from './components/fpyGraphs/fpyGraphs.component';
+import { VideoplayerComponent } from './videoplayer.component';
 
 describe('VideoplayerComponent', () => {
   let component: VideoplayerComponent;

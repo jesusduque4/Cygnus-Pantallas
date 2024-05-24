@@ -15,6 +15,14 @@
     border-radius: 14px;
   }
 
+  #carouselNoticias.hidden {
+    display: none;
+  }
+
+  .adjusted-height{
+    height: 24vh !important;
+  }
+
   .card-sections-Noticias {
     height: 53vh;
     background-color: #132D48;
@@ -22,21 +30,10 @@
     border-radius: 14px;
   }
 
-  .downtimes-card-sections-main{
-    display: none;
-  }
-
   #carouselDeportes{
     display: none;
   }
 
-  .vacantes-min-card-sections-main{
-    display: none;
-  }
-
-  .vacantes-card-sections-main{
-    display: none;
-  }
 
   #carouselItemsSport {
     overflow: hidden; /* Oculta el desbordamiento del contenido */

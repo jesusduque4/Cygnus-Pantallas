@@ -41,13 +41,13 @@
                         "production": {
                             "budgets": [{
                                     "type": "initial",
-                                    "maximumWarning": "500kb",
-                                    "maximumError": "1mb"
+                                    "maximumWarning": "5mb",
+                                    "maximumError": "2mb"
                                 },
                                 {
                                     "type": "anyComponentStyle",
-                                    "maximumWarning": "2kb",
-                                    "maximumError": "4kb"
+                                    "maximumWarning": "5mb",
+                                    "maximumError": "2mb"
                                 }
                             ],
                             "fileReplacements": [{
@@ -70,7 +70,9 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                      "port": 2423
+                      "port": 2423,
+                      "sslKey": "C:\\CERTIFICADO\\key.pem",
+                    "sslCert": "C:\\CERTIFICADO\\crt.pem"
                     },
                     "configurations": {
                         "production": {
@@ -82,6 +84,14 @@
                     },
                     "defaultConfiguration": "development"
                 },
+                "serve-ssr": {
+                  "builder": "@nguniversal/builders:ssr-dev-server",
+                  "options": {
+                      "ssl": true,
+                      "sslKey": "C:\\CERTIFICADO\\key.pem",
+                  "sslCert": "C:\\CERTIFICADO\\crt.pem"
+                  }
+              },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
