@@ -38,7 +38,7 @@ export class WebSocketComponent implements OnInit {
           if (message.activeBreaks.length > 0){
             message.activeBreaks.forEach((element:any) => {
               if (element.IP === this.ip){
-                window.location.href = 'http://10.19.17.34:2423/activeBreaks';
+                window.location.href = 'https://10.19.17.34:2423/activeBreaks';
               }
             });
           }

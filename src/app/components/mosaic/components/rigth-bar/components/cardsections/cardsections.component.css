@@ -52,7 +52,7 @@
 
 }
 
-i.fas.fa-user-plus {
+.fa-user-plus{
   color: #57ff57;
 }
 
@@ -60,12 +60,15 @@ i.fas.fa-user-plus {
   position: relative; /* Ajustamos la posición de los elementos relativamente */
 }
 
-.iconodown {
+svg.svg-inline--fa.fa-triangle-exclamation.iconodown {
   color: #fafd1d26;
-  font-size: 5rem;
-  display: flex; /* Cambiamos a "block" para que ocupe todo el ancho disponible */
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
 }
+
 
 .iconvacante {
   color: #82d58826;

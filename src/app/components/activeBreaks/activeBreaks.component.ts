@@ -30,7 +30,7 @@ export class activeBreaksComponent implements OnInit {
       const duration = videoActiveBreak.duration*1000;
 
       setTimeout(()=> {
-        window.location.href = 'http://10.19.17.34:2423/mosaic';
+        window.location.href = 'https://10.19.17.34:2423/mosaic';
       }, duration)
 
       }
