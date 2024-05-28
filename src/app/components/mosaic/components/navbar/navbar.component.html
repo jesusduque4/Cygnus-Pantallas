@@ -1,26 +1,26 @@
 
 <div class="row col-12">
-  <div class="col-1 blocks">
+  <div class="col-2 blocks">
     <img class="navitem-icon-logo-fxnn icones" src="../assets/img/LogoFoxconnCompleto.png" />
   </div>
   <div class="col-3 blocks">
     <div *ngIf="getObjectKeysLenght(weather)>0">
       <img [src]="weather.icon">
       <div class="navText">
-        <h4> {{weather.temp_c}} °C / {{weather.temp_f}} °F </h4>
+        <h4 class="textIconNavbar">{{weather.temp_c}} °C / {{weather.temp_f}} °F </h4>
       </div>
     </div>
   </div>
-  <div class="col-3 blocks">
+  <div class="col-4 blocks">
     <div *ngIf="getObjectKeysLenght(dollar_exchange)>0">
       <img src="../assets/img/dollar.png" class="imgDollar">
       <div class="navText">
-        <h4> {{dollar_exchange.compra | currency}} / {{dollar_exchange.venta | currency}} </h4>
+        <h4 class="textIconNavbar"> {{dollar_exchange.compra | currency}} / {{dollar_exchange.venta | currency}} </h4>
       </div>
     </div>
   </div>
 
-  <div class="col-4 blocks">
+  <div class="col-3 blocks">
     <div class="puentes w-100">
       <div id="carouselSlidesOnly" class="carousel slide w-100" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -28,7 +28,7 @@
             [ngClass]="indexOfelement===0?'active':''"  data-bs-interval="3000">
             <img [src]="'../assets/img/puente.png'" class="imgPuente" classIcon="navitem-icon-bridge">
             <div class="navText">
-              <h4>{{_bridges.bridge}} {{_bridges.delay}}</h4>
+              <h4 class="textIconNavbar">{{_bridges.bridge}} {{_bridges.delay}}</h4>
             </div>
           </div>
         </div>
