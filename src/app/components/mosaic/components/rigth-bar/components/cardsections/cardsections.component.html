@@ -18,8 +18,8 @@ style="overflow: hidden;"
           <div class="carousel-inner">
               <div id="carouselItemsNews" class="carousel-item" *ngFor="let _item of items;let indexOfelement=index;" [ngClass]="indexOfelement===0?'active':''">
                 <div class="scroll-container">
-                  <mat-card-title-group>
-                        <mat-card-title class="card-sections-text-title">{{_item.title}}</mat-card-title>
+                  <mat-card-title-group style="margin-left: 15px !important;">
+                        <mat-card-title class="card-sections-text-content">{{_item.title}}</mat-card-title>
                     </mat-card-title-group>
                     <hr style="border: 1px solid #ddd; border-top: 1px solid #ddd; width: 85%; margin: 0 auto;">
                     <br>
@@ -38,7 +38,7 @@ style="overflow: hidden;"
         <div class="carousel-inner">
             <div id="carouselItemsSport" class="carousel-item" *ngFor="let _item of items; let indexOfelement=index;" [ngClass]="indexOfelement===0?'active':''">
                 <div class="scroll-container">
-                    <mat-card-title-group>
+                    <mat-card-title-group style="margin-left: 15px !important;">
                         <mat-card-title class="card-sections-text-content">{{_item.new}}</mat-card-title>
                     </mat-card-title-group>
                     <hr style="border: 1px solid #ddd; border-top: 1px solid #ddd; width: 85%; margin: 0 auto;">
@@ -46,7 +46,7 @@ style="overflow: hidden;"
                     <mat-card-content class="card-sections-text-content">
                         {{_item.description}}
                     </mat-card-content>
-                    <img style="margin-left: 5px; width: 226px; height: 127px;" [src]="!_item.img.includes('.mp4') ? _item.img : '../assets/img/sportsNew.jpg'" />
+                    <img style="margin-left: 17px; width: 226px; height: 127px;" [src]="!_item.img.includes('.mp4') ? _item.img : '../assets/img/sportsNew.jpg'" />
                 </div>
             </div>
         </div>

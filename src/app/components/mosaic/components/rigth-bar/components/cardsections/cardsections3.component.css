@@ -58,7 +58,7 @@ svg.svg-inline--fa.fa-circle-arrow-down {
 
 #carouselItemsSport {
   overflow: hidden;
-  height: 235px;
+  height: 250px;
 }
 
 #carouselItemsNews {
@@ -126,17 +126,6 @@ mat-card.card-sections-graph {
 .card-sections-text-content {
   font-size: 30px;
   margin-left: 5px;
-  margin-right: 5px;
-  text-align: left;
-  color: #faffff;
-  font-family: Roboto, sans-serif;
-  font-weight: normal;
-  line-height: calc(30px + 7px); 
-}
-
-.card-sections-text-title {
-  font-size: 30px;
-  margin-left: 16px;
   margin-right: 5px;
   text-align: left;
   color: #faffff;
