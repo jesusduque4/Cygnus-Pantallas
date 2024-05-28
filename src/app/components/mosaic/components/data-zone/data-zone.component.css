@@ -16,12 +16,15 @@
   font-weight: bold;
   font-family: sans-serif;
   padding-left: 23px;
+  font-size: 38px;
 }
 
 .completeDate {
   color: white;
   font-family: sans-serif;
-  padding-left: 36px;
+  font-size: 28px;
+  padding-left: 27px;
+  padding-top: 13px;
 }
 
 .completeTime {
@@ -29,7 +32,8 @@
   font-family: sans-serif;
   font-weight: bold;
   justify-content: right;
-  display: flex;
+  display: grid;
+  font-size: 35px;
 }
 
 

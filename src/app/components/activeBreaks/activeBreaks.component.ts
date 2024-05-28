@@ -26,15 +26,24 @@ export class activeBreaksComponent implements OnInit {
     setTimeout(() => {
       let videoActiveBreak = document.querySelectorAll('.video_div')[0] as HTMLVideoElement;
       if (videoActiveBreak) {
-        videoActiveBreak.play();
-      const duration = videoActiveBreak.duration*1000;
+        const duration = videoActiveBreak.duration*1000;
+        videoActiveBreak.muted = false;
+        videoActiveBreak.addEventListener('canplay', () => {
+          videoActiveBreak.play().catch(error => {
+            console.error('Error playing video:', error);
+          });
+        });
+    
+        if (videoActiveBreak.readyState >= 3) {
+          videoActiveBreak.dispatchEvent(new Event('canplay'));
+        }
 
       setTimeout(()=> {
         window.location.href = 'https://10.19.17.34:2423/mosaic';
       }, duration)
 
       }
-    },500)
+    },2000)
   }
 
 }

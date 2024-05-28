@@ -116,7 +116,6 @@ mat-card.card-sections-graph {
 }
 .card-title {
     color: white;
-    text-align: justify;
     font-weight: bold;
     font-size: 1rem;
     font-family: system-ui;
@@ -125,13 +124,25 @@ mat-card.card-sections-graph {
 
 
 .card-sections-text-content {
-  font-size: 13px;
+  font-size: 30px;
   margin-left: 5px;
   margin-right: 5px;
   text-align: left;
   color: #faffff;
   font-family: Roboto, sans-serif;
   font-weight: normal;
+  line-height: calc(30px + 7px); 
+}
+
+.card-sections-text-title {
+  font-size: 30px;
+  margin-left: 16px;
+  margin-right: 5px;
+  text-align: left;
+  color: #faffff;
+  font-family: Roboto, sans-serif;
+  font-weight: normal;
+  line-height: calc(30px + 7px); 
 }
 
 .downtimesText {

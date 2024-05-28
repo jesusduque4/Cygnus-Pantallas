@@ -93,12 +93,22 @@ export class VideoplayerComponent implements OnInit   {
     });
   }
 
-  darPlay(id:number){
+   darPlay(id: number) {
     let mediaActual = document.querySelectorAll('.data-item')[id];
-    let data = mediaActual.querySelector('.video_div') as HTMLVideoElement
-    if (data){
+    let data = mediaActual.querySelector('.video_div') as HTMLVideoElement;
+    if (data) {
       data.currentTime = 0;
-      data.play();
+      data.muted = false;
+      
+      data.addEventListener('canplay', () => {
+        data.play().catch(error => {
+          console.error('Error playing video:', error);
+        });
+      });
+  
+      if (data.readyState >= 3) {
+        data.dispatchEvent(new Event('canplay'));
+      }
     }
   }
 
