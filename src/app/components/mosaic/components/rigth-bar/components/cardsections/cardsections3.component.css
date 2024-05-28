@@ -117,7 +117,7 @@ mat-card.card-sections-graph {
 .card-title {
     color: white;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 24px;
     font-family: system-ui;
     margin: 5px !important;
 }
