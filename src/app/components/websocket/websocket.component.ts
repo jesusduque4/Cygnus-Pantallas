@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 export class WebSocketComponent implements OnInit {
 
   serverUrl = environment.serverUrl;
-  webSpcketUrl = environment.webSocketUrl;
+  webSocketUrl = environment.webSocketUrl;
 
   socket$!: WebSocketSubject<any>;
   ip = '';
@@ -24,7 +24,7 @@ export class WebSocketComponent implements OnInit {
       this.ip = data.clientIP;
     });
 
-    this.socket$ = new WebSocketSubject(`wss:${this.webSpcketUrl}`);
+    this.socket$ = new WebSocketSubject(`wss://${this.webSocketUrl}`);
     //this.socket$ = new WebSocketSubject('ws://localhost:9229');
 
     const observer: Observer<any> = {
