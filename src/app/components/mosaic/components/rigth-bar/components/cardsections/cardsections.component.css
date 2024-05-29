@@ -37,12 +37,12 @@
 
   #carouselItemsSport {
     overflow: hidden; /* Oculta el desbordamiento del contenido */
-    height: 271px !important; /* Establece la altura máxima del div */
+    height: 330px !important; /* Establece la altura máxima del div */
   }
 
   #carouselItemsNews {
     overflow: hidden; /* Oculta el desbordamiento del contenido */
-    height: 271px !important; /* Establece la altura máxima del div */
+    height: 330px !important; /* Establece la altura máxima del div */
   }
 
   #carouselItemsVacantes {
