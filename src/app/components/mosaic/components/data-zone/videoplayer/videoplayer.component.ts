@@ -2,6 +2,7 @@ import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { ApirestService } from 'src/app/services/apirest.service';
 import { Media, graph } from 'src/app/interfaces/general';
 import { otherGraph, otherGraph2, fpyGraph, fpyGraph2, fpyGraph3 } from './shared'
+import { environment } from 'src/environments/environment';
 
 
 
@@ -11,6 +12,9 @@ import { otherGraph, otherGraph2, fpyGraph, fpyGraph2, fpyGraph3 } from './share
   styleUrls: ['./videoplayer.component.css']
 })
 export class VideoplayerComponent implements OnInit   {
+
+  apiUrl = environment.apiUrl;
+
   mediaObjs: Media[] = [];
   myCarousel = document.querySelector('#carouselExampleInterval')!
   flagLoad: number = 0;

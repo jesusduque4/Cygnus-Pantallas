@@ -1,7 +1,7 @@
 import {  Component, OnInit } from '@angular/core';
 import { Media } from 'src/app/interfaces/general';
 import { ApirestService } from 'src/app/services/apirest.service';
-
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-activeBreaks',
@@ -9,8 +9,9 @@ import { ApirestService } from 'src/app/services/apirest.service';
   styleUrls: ['./activeBreaks.component.css']
 })
 export class activeBreaksComponent implements OnInit {
-
-  video: Media[] = []
+  serverUrl = environment.serverUrl;
+  apiUrl = environment.apiUrl;
+  video: Media[] = [];
   duration: number = 0;
   constructor( private apiServcice:ApirestService){
   }
@@ -39,7 +40,7 @@ export class activeBreaksComponent implements OnInit {
         }
 
       setTimeout(()=> {
-        window.location.href = 'https://10.19.17.34:2423/mosaic';
+        window.location.href = `${this.serverUrl}/mosaic`;
       }, duration)
 
       }

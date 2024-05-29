@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WebSocketSubject } from 'rxjs/webSocket';
 import { Observer } from 'rxjs';
 import { ApirestService } from 'src/app/services/apirest.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'websocket',
@@ -9,6 +10,10 @@ import { ApirestService } from 'src/app/services/apirest.service';
   styles: ['']
 })
 export class WebSocketComponent implements OnInit {
+
+  serverUrl = environment.serverUrl;
+  webSpcketUrl = environment.webSocketUrl;
+
   socket$!: WebSocketSubject<any>;
   ip = '';
   constructor(private api: ApirestService ) {}
@@ -19,7 +24,7 @@ export class WebSocketComponent implements OnInit {
       this.ip = data.clientIP;
     });
 
-    this.socket$ = new WebSocketSubject('wss://10.19.17.34:9229');
+    this.socket$ = new WebSocketSubject(`wss:${this.webSpcketUrl}`);
     //this.socket$ = new WebSocketSubject('ws://localhost:9229');
 
     const observer: Observer<any> = {
@@ -38,7 +43,7 @@ export class WebSocketComponent implements OnInit {
           if (message.activeBreaks.length > 0){
             message.activeBreaks.forEach((element:any) => {
               if (element.IP === this.ip){
-                window.location.href = 'https://10.19.17.34:2423/activeBreaks';
+                window.location.href = `${this.serverUrl}/activeBreaks`;
               }
             });
           }

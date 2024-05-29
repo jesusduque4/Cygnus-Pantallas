@@ -71,12 +71,33 @@
                           "sourceMap": true
                       },
                       "development": {
-                          "buildOptimizer": false,
-                          "optimization": false,
-                          "vendorChunk": true,
-                          "extractLicenses": false,
-                          "sourceMap": true,
-                          "namedChunks": true
+                        "budgets": [
+                            {
+                                "type": "initial",
+                                "maximumWarning": "10mb",
+                                "maximumError": "10mb"
+                            },
+                            {
+                                "type": "anyComponentStyle",
+                                "maximumWarning": "10mb",
+                                "maximumError": "2mb"
+                            }
+                        ],
+                        "fileReplacements": [
+                            {
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.ts"
+                            }
+                        ],
+                        "outputHashing": "all",
+                        "optimization": {
+                            "scripts": false,
+                            "styles": {
+                                "minify": true,
+                                "inlineCritical": false
+                            }
+                        },
+                        "sourceMap": true
                       }
                   },
                   "defaultConfiguration": "production"

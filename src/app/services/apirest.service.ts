@@ -1,5 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 //import { webSocket } from 'rxjs/webSocket';
 //import { Observable, Subject } from 'rxjs';
 
@@ -7,55 +8,43 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApirestService implements OnDestroy {
-  //private URL_API: string = "https://apihpe.ecmms.com.mx/API/CyGNUS/Visuales";
-    private URL_API: string = "http://localhost:8081/API/CyGNUS/Visuales" // Spring
-    private URL_API2: string = "https://10.19.17.34:9119/api/visuales" // UAT - Node
-    private URL_API3: string = "http://localhost:9119/api/visuales"    // Local - Node
-    private URL_API4: string = "https://10.19.17.34:1991/api/visuales" // PRD -  Node
 
-  //private URL_SOCKET: string = "ws://localhost:8080/WebSocket/WEBSOCKET";
-  private ipclient: any;
+  apiUrl = environment.apiUrl;
 
-  //private _refreshView$ = new Subject<void>();
-  //private subject = webSocket(this.URL_SOCKET);
-
+    private URL_API: string = `${this.apiUrl}/api/visuales`// Spring
+    private URL_API2: string = "http://localhost:8081/API/CyGNUS/Visuales" // UAT - Node
+    
   constructor(private http: HttpClient) { }
 
-
-  public getView() {
-    return this.http.get(`${this.URL_API}/view`);
-  }
-
   ngOnDestroy(): void {
-    //this.subject.complete();
   }
 
   public getWeather() {
-    return this.http.get(`${this.URL_API2}/weather`);
+    return this.http.get(`${this.URL_API}/weather`);
   }
 
   public getDollarExchange() {
-    return this.http.get(`${this.URL_API2}/dollar`);
+    return this.http.get(`${this.URL_API}/dollar`);
   }
 
   public getBridges() {
-    return this.http.get(`${this.URL_API2}/bridges`);
+    return this.http.get(`${this.URL_API}/bridges`);
   }
 
   public getMedia(ip: string) {
-    return this.http.get(`${this.URL_API2}/media?param=${ip}`);
+    return this.http.get(`${this.URL_API}/media?param=${ip}`);
   }
 
   public getGenericData(resource_name: string) {
-    return this.http.get(`${this.URL_API2}/${resource_name}`);
+    return this.http.get(`${this.URL_API}/${resource_name}`);
   }
 
   public getAttendance() {
-    return this.http.get(`${this.URL_API2}/attendance`);
+    return this.http.get(`${this.URL_API}/attendance`);
   }
 
   public getGraphData() {
-    return this.http.get(`${this.URL_API2}/graphs`);
+    return this.http.get(`${this.URL_API}/graphs`);
   }
 
 
