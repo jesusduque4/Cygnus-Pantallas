@@ -1,5 +1,5 @@
 .titleCards {
-  font-family: roboto;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .puntaje {
@@ -58,21 +58,21 @@ svg.svg-inline--fa.fa-circle-arrow-down {
 
 #carouselItemsSport {
   overflow: hidden;
-  height: 250px;
+  height: 330px;
+  margin-top: 30px;
 }
 
 #carouselItemsNews {
   overflow: hidden;
-  height: 235px;
+  height: 330px;
+  margin-top: 30px;
 }
 
 #carouselItemsVacantes {
   overflow: hidden;
   height: 45px;
 }
-#carouselItemsVacantes{
-  height: 50px;
-}
+
 
 .scroll-container {
   animation: none;
@@ -105,7 +105,8 @@ svg.svg-inline--fa.fa-circle-arrow-down {
 }
 
 mat-card.card-sections-graph {
-  box-shadow: 0px 0px 4px 0px lightgrey;
+  /* box-shadow: 0px 0px 4px 0px lightgrey; */
+  border-radius: 14px;
 }
 
 .graphs {
@@ -118,7 +119,7 @@ mat-card.card-sections-graph {
     color: white;
     font-weight: bold;
     font-size: 24px;
-    font-family: Roboto, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 5px !important;
 }
 
@@ -129,7 +130,7 @@ mat-card.card-sections-graph {
   margin-right: 5px;
   text-align: left;
   color: #faffff;
-  font-family: Roboto, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: normal;
   line-height: calc(30px + 7px); 
 }
@@ -140,7 +141,7 @@ mat-card.card-sections-graph {
   margin-right: 5px;
   text-align: left;
   color: #faffff;
-  font-family: Roboto, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: normal;
   line-height: calc(30px + 7px); 
 }
@@ -149,7 +150,7 @@ mat-card.card-sections-graph {
   font-size: 13px;
   text-align: left;
   color: #faffff;
-  font-family: Roboto, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: normal;
   margin-bottom: 5px !important;;
 }

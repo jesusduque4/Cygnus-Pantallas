@@ -14,14 +14,14 @@
 .saludo {
   color: white;
   font-weight: bold;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   padding-left: 23px;
   font-size: 38px;
 }
 
 .completeDate {
   color: white;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 28px;
   padding-left: 27px;
   padding-top: 13px;
@@ -29,13 +29,23 @@
 
 .completeTime {
   color: white;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;;
   font-weight: bold;
   justify-content: right;
   display: grid;
   font-size: 35px;
 }
 
+.divVersion {
+  display: flex;
+  justify-content: right;
+  margin-right: 2%;
+  margin-top: 2%;
+}
+
+.logVersion{
+  color: white;
+}
 
 .header {
   height: 9vh;

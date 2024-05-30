@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApirestService } from 'src/app/services/apirest.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'data-zone',
@@ -7,7 +8,7 @@ import { ApirestService } from 'src/app/services/apirest.service';
   styleUrls: ['./data-zone.component.css']
 })
 export class DataZoneComponent implements OnInit {
-
+  public version: string = environment.version;
   private daysArray = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
   private monthsArray = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 

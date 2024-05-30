@@ -1,4 +1,3 @@
-/* Estilo para pantallas de 0 a 18 pulgadas */
 @media (max-width: 16in) {
   .card-sections-main {
       height: 53vh;
@@ -36,18 +35,18 @@
 
 
   #carouselItemsSport {
-    overflow: hidden; /* Oculta el desbordamiento del contenido */
-    height: 330px !important; /* Establece la altura máxima del div */
+    overflow: hidden; 
+    height: 330px !important;
   }
 
   #carouselItemsNews {
-    overflow: hidden; /* Oculta el desbordamiento del contenido */
-    height: 330px !important; /* Establece la altura máxima del div */
+    overflow: hidden; 
+    height: 330px !important;
   }
 
   #carouselItemsVacantes {
-    overflow: hidden; /* Oculta el desbordamiento del contenido */
-    height: 271px !important; /* Establece la altura máxima del div */
+    overflow: hidden; 
+    height: 271px !important;
   }
 
 }
@@ -57,7 +56,7 @@
 }
 
 .downtimes-container {
-  position: relative; /* Ajustamos la posición de los elementos relativamente */
+  position: relative; 
 }
 
 svg.svg-inline--fa.fa-triangle-exclamation.iconodown {
@@ -73,7 +72,7 @@ svg.svg-inline--fa.fa-triangle-exclamation.iconodown {
 .iconvacante {
   color: #82d58826;
   font-size: 5rem;
-  display: flex; /* Cambiamos a "block" para que ocupe todo el ancho disponible */
+  display: flex; 
   justify-content: center;
   position: absolute;
   margin-left: 64%;
@@ -81,7 +80,6 @@ svg.svg-inline--fa.fa-triangle-exclamation.iconodown {
 
 
 
-@media (min-width: 18.1in) {
   .card-sections-main {
       height: 30vh;
       background-color: #132D48;
@@ -96,7 +94,7 @@ svg.svg-inline--fa.fa-triangle-exclamation.iconodown {
     border-radius: 14px;
 }
 
-}
+
 
 
 @media screen and (min-width: 20in)  {
@@ -109,7 +107,8 @@ svg.svg-inline--fa.fa-triangle-exclamation.iconodown {
 }
 
 .card-sections-graph{
-  background-color: #19395A ;
+  /* background-color: #19395A ; */
+  background-color: #132d48 ;
   overflow: hidden;
   height: 100%;
   position: static;
