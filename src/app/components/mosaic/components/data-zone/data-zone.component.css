@@ -37,7 +37,7 @@
 }
 
 .divVersion {
-  display: flex;
+  display: grid;
   justify-content: right;
   margin-right: 2%;
   margin-top: 2%;
