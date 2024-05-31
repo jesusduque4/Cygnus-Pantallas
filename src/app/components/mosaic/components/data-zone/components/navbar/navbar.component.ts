@@ -57,13 +57,6 @@ export class NavbarComponent implements OnInit {
     let saludo = document.querySelector('.saludo') as HTMLElement;
     this.date = new Date();
 
-    /*const weekday = this.daysArray[this.date.getDay()];
-    const day = this.date.getDate();
-    const month = this.monthsArray[this.date.getMonth()];
-    const year = this.date.getFullYear();
-
-    this.complete_date = 'Hoy es '+ weekday + ' ' + day + ' de ' + month + ' del ' + year;*/
-
     let hour = this.date.getHours().toString().padStart(2, '0');
     const minutes = this.date.getMinutes().toString().padStart(2, '0');
     const seconds = this.date.getSeconds().toString().padStart(2, '0');
@@ -80,13 +73,6 @@ export class NavbarComponent implements OnInit {
            saludo.textContent = '¡Buenas tardes!'
          }
        }
-
-       /*if (this.weather.text){
-          if (this.weather.text.includes('rain')){
-            const imageName = 'RainLeos.gif';
-            mediaZoneElement.style.backgroundImage = `url(assets/img/${imageName}`;
-          }
-       }*/
 
   }
 
