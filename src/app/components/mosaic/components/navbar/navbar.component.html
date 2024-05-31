@@ -4,12 +4,15 @@
     <img class="navitem-icon-logo-fxnn icones" src="../assets/img/LogoFoxconnCompleto.png" />
   </div>
   <div class="col-3 blocks">
-    <div *ngIf="getObjectKeysLenght(weather)>0">
-      <img [src]="weather.icon">
-      <div class="navText">
-        <h4 class="textIconNavbar">{{weather.temp_c}} °C / {{weather.temp_f}} °F </h4>
+    <!-- <div *ngIf="getObjectKeysLenght(weather)>0"> -->
+      <!-- <img [src]="weather.icon"> -->
+      <!-- <div class="navText"> -->
+        <!-- <h4 class="textIconNavbar">{{weather.temp_c}} °C / {{weather.temp_f}} °F </h4> -->
+      <!-- </div> -->
+    <!-- </div> -->
+      <div>
+        <h1 class="completeTime">{{complate_time}}</h1>
       </div>
-    </div>
   </div>
   <div class="col-4 blocks">
     <div *ngIf="getObjectKeysLenght(dollar_exchange)>0">

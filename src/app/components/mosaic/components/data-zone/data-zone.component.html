@@ -9,9 +9,14 @@
         <h3 class="completeDate">{{complete_date}}</h3>
       </div>
       <div class="col-6">
-        <h1 class="completeTime">{{complate_time}}</h1>
+        <div *ngIf="getObjectKeysLenght(weather)>0" class="weather-container">
+            <img style="margin-right: 10px; width: 100%; margin-bottom: 15%;" [src]="weather.icon" class="weather-icon">
+            <div class="navText">
+                <h4 style="color: white; font-weight: bold; font-size: 30px;"> {{weather.temp_c}} °C / {{weather.temp_f}} °F </h4>
+            </div>
+        </div>
       </div>
-    </div>
+    </div>   
     <mat-list class="cuerpoMedia">
       <mat-list-item class="h-100">
         <app-videoplayer class="w-100 h-100"></app-videoplayer>

@@ -16,6 +16,13 @@
 .bar{
   width: 95%;
   margin-left: 2%;
+  margin-top: 4%;
+}
+
+@media screen and (display-mode: fullscreen) {
+  .bar{
+    margin-top: 6% !important;
+  }
 }
 
 .cisne {

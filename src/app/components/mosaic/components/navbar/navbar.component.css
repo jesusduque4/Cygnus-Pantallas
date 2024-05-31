@@ -52,3 +52,12 @@
   align-items: center;
 }
 
+.completeTime {
+  color: white;
+  font-family: 'Open Sans', sans-serif;;
+  font-weight: bold;
+  justify-content: right;
+  display: grid;
+  font-size: 35px;
+  margin-top: 14%;
+}

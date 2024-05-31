@@ -19,9 +19,9 @@ export class MosaicComponent implements OnInit {
         if (document.querySelector('.completeDate')!.textContent === ''){
           countRefresh += 1000;
         }
-        if (document.querySelectorAll('.navText').length !== 6){
+        /*if (document.querySelectorAll('.navText').length !== 6){
           countRefresh += 1000;
-        }
+        }*/
         if (countRefresh === 0) {
           this.refresh = 1;
           return;

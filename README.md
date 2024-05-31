@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 -----------------------------------------------------------------
+## Set version 
+
+Run `set APP_VERSION=PRD-yyyymmdd## && npm run setVersion`
+
 ## Run local PRD
 
 Run `ng serve --configuration production ` for a dev server. Navigate to `http://localhost:2423/`. The app will automatically reload if you change any of the source files.
@@ -11,14 +15,12 @@ Run `ng serve --configuration production ` for a dev server. Navigate to `http:/
 Run `ng serve --configuration development ` for a dev server. Navigate to `http://localhost:2423/`. The app will automatically reload if you change any of the source files.
 
 ## RUN server PRD
-1.- Run `npx tsc`
-2.- Run `ng build --configuration production`
-3.- Run `node dist/server.js OR C:\FastAPI\pAPI>pm2 restart 6 OR C:\Visuales\cygnusvisuales>pm2 start dist/server.js --name "Visuales" --watch`
+1.- Run `set APP_VERSION=PRD-yyyymmdd## && npm run setVersion && npx tsc && ng build --configuration production`
+2.- Run `node dist/server.js OR C:\FastAPI\pAPI>pm2 restart 6 OR C:\Visuales\cygnusvisuales>pm2 start dist/server.js --name "Visuales" --watch`
 
 ## RUN server UAT
-1.- Run `npx tsc`
-2.- Run `ng build --configuration development`
-3.- Run `node dist/server.js OR C:\FastAPI\pAPI>pm2 restart 6 OR C:\Visuales\cygnusvisuales>pm2 start dist/server.js --name "Visuales" --watch `
+1.- Run `set APP_VERSION=UAT-yyyymmdd## && npm run setVersion && npx tsc && ng build --configuration development`
+2.- Run `node dist/server.js OR C:\FastAPI\pAPI>pm2 restart 6 OR C:\Visuales\cygnusvisuales>pm2 start dist/server.js --name "Visuales" --watch `
 
 -----------------------------------------------------------------
 

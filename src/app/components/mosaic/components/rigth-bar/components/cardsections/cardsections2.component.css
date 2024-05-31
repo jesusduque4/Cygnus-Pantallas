@@ -10,23 +10,23 @@
 
 .downtimes-card-sections-main{
   height: 15vh;
-  background-color: #587899;
+  background-color: #132d48;
   color: white;
-  border-radius: 14px;
+  border-radius: 8px;
 }
 
 .vacantes-card-sections-main{
   height: 15vh;
-  background-color: #587899;
+  background-color: #132d48;
   color: white;
-  border-radius: 14px;
+  border-radius: 8px;
 }
 
 .vacantes-min-card-sections-main{
   height: 15vh;
-  background-color: #587899;
+  background-color: #132d48;
   color: white;
-  border-radius: 14px;
+  border-radius: 8px;
 }
 
 @media screen and (display-mode: fullscreen) {
@@ -42,7 +42,7 @@
   }
 
   .card-sections-Noticias {
-    height: 33vh !important;
+    height: 30vh !important;
 
   }
 
@@ -51,7 +51,7 @@
     height: 270px !important;
   }
   .card-sections-Noticias {
-    height: 33vh !important;
+    height: 30vh !important;
   }
 
   .vacantes-min-card-sections-main{

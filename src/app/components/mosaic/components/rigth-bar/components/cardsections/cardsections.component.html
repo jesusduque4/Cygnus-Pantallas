@@ -60,7 +60,7 @@ style="overflow: hidden;"
    </div>
 
    <div *ngIf="title === 'DOWNTIMES'">
-    <label class="fas fa-exclamation-triangle iconodown"> </label>
+    <!-- <label class="fas fa-exclamation-triangle iconodown"> </label> -->
     <div [id]="'carouselSlides_'+resourcename" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
           <div class="carousel-item" *ngFor="let _downtime of downtimes; let id=index;"  [ngClass]="id===0?'active':''">
@@ -75,7 +75,7 @@ style="overflow: hidden;"
   </div>
 
   <div *ngIf="title === 'VACANTES'" class="vacantes-carousel">
-    <label class="fas fas fa-user-plus iconvacante"> </label>
+    <!-- <label class="fas fas fa-user-plus iconvacante"> </label> -->
     <div [id]="'carouselSlides_'+resourcename" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item" *ngFor="let vacante of vacantes; let id=index;" [ngClass]="id===0 ? 'active' : ''">
