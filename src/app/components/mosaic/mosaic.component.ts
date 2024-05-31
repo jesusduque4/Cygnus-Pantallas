@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
-
 @Component({
   selector: 'app-mosaic',
   templateUrl: './mosaic.component.html',
@@ -14,14 +12,11 @@ export class MosaicComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-      let countRefresh = 0; // Tiempo inicial de espera
+      let countRefresh = 0; 
       const checkAndRefresh = () => {
         if (document.querySelector('.completeDate')!.textContent === ''){
           countRefresh += 1000;
         }
-        /*if (document.querySelectorAll('.navText').length !== 6){
-          countRefresh += 1000;
-        }*/
         if (countRefresh === 0) {
           this.refresh = 1;
           return;
@@ -31,7 +26,6 @@ export class MosaicComponent implements OnInit {
           checkAndRefresh();
         }, countRefresh);
       };
-
 
       setTimeout(() => {
         countRefresh = 0;
