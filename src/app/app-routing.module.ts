@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MosaicComponent } from './components/mosaic/mosaic.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { activeBreaksComponent } from './components/activeBreaks/activeBreaks.component';
+import { ReceptionComponent } from './components/reception/reception.component';
 
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'loading', component: SpinnerComponent },
   { path: 'mosaic', component: MosaicComponent },
   { path: 'activeBreaks', component: activeBreaksComponent },
+  { path: 'reception', component: ReceptionComponent },
   { path: '**', redirectTo: '/loading', pathMatch: 'full' }
 ];
 

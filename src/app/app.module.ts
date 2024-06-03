@@ -19,6 +19,7 @@ import { RigthBarComponent } from './components/mosaic/components/rigth-bar/rigt
 import { WebSocketComponent } from './components/websocket/websocket.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { activeBreaksComponent } from './components/activeBreaks/activeBreaks.component';
+import { ReceptionComponent } from './components/reception/reception.component';
 import { MarqueeComponent } from './components/activeBreaks/components/marquee/marquee.component';
 import { FpyGraphsComponent } from './components/mosaic/components/data-zone/components/videoplayer/components/fpyGraphs/fpyGraphs.component';
 import { RouterModule } from '@angular/router';
@@ -39,7 +40,8 @@ import { RouterModule } from '@angular/router';
     SpinnerComponent,
     tittleGraph,
     VideoplayerComponent,
-    WebSocketComponent
+    WebSocketComponent,
+    ReceptionComponent
   ],
   imports: [
     AppRoutingModule,

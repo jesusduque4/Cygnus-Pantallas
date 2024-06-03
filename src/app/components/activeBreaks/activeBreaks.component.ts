@@ -13,12 +13,12 @@ export class activeBreaksComponent implements OnInit {
   apiUrl = environment.apiUrl;
   video: Media[] = [];
   duration: number = 0;
-  constructor( private apiServcice:ApirestService){
+  constructor( private apiService:ApirestService){
   }
 
   ngOnInit(): void {
 
-    this.apiServcice.getMedia('DEFAULT').subscribe((data: any)=> {
+    this.apiService.getMedia('DEFAULT').subscribe((data: any)=> {
       this.video = data.Media.filter((mediaItem: any)=> {
         return mediaItem.type === 'pausaActiva';
       });
