@@ -1,7 +1,7 @@
 <div class="view">
   <div class="divVideo col-12" *ngIf="video.length > 0">
     <video class="video_div" muted controls onloadedmetadata="this.muted = true">
-      <source type="video/mp4" [src]="apiUrl+'/' + video[0].path">
+      <source type="video/mp4" [src]="'/..assets/' + video[0].path">
     </video>
   </div>
   <div class="divMarquee">
