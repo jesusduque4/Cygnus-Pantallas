@@ -5,7 +5,7 @@
         <fpy-graphs [type]="media.type" [id]="media.id" [id2]="media.id2"></fpy-graphs>
       </ng-container>
       <ng-container *ngIf="media.type === 'Video'">
-        <video class="video_div" muted controls onloadedmetadata="this.muted = true">
+          <video #videoElement class="video_div" muted controls preload="auto">
           <!-- Este recurso esta en la API de NODE -->
           <source type="video/mp4" [src]="'../assets/'+media.path">
         </video>
