@@ -105,7 +105,12 @@ svg.svg-inline--fa.fa-triangle-exclamation.iconodown {
     border-radius: 8px;
   }
 }
-
+.min-card-sections {
+  background-color: #132D48 ;
+  color: white;
+  height: 22vh;
+  border-radius: 8px;
+}
 .card-sections-graph{
   /* background-color: #19395A ; */
   background-color: #132d48 ;
