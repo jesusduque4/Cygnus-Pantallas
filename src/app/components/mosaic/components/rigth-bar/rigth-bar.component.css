@@ -26,9 +26,13 @@
 }
 
 .cisne {
-  width: 140%;
+  width: 204%;
   margin-left: 940%;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
+.header {
+  height: 6vh;
+  margin-bottom: 3vh;
+}
 
