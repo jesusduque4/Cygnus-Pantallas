@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApirestService } from 'src/app/services/apirest.service';
 import { Media } from 'src/app/interfaces/general';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-reception',
@@ -8,6 +9,7 @@ import { Media } from 'src/app/interfaces/general';
   styleUrls: ['./reception.component.css']
 })
 export class ReceptionComponent implements OnInit {
+  apiUrl = environment.apiUrl;
   video: Media[] = [];
   ip = '';
   constructor(private apiService: ApirestService){}

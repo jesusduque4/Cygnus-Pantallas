@@ -7,11 +7,11 @@
       <ng-container *ngIf="media.type === 'Video'">
           <video #videoElement class="video_div" muted controls preload="auto">
           <!-- Este recurso esta en la API de NODE -->
-          <source type="video/mp4" [src]="'../assets/'+media.path">
+          <source type="video/mp4" [src]="apiUrl+'/'+media.path">
         </video>
       </ng-container>
       <ng-container *ngIf="media.type === 'Imagen'">
-        <img [src]="'../assets/'+media.path" class="imagen_div w-100">
+        <img [src]="apiUrl+'/'+media.path" class="imagen_div w-100">
       </ng-container>
     </div>
   </div>
