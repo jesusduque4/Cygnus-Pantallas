@@ -1,6 +1,6 @@
-import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApirestService } from 'src/app/services/apirest.service';
-import { Media, graph } from 'src/app/interfaces/general';
+import { Media } from 'src/app/interfaces/general';
 import { otherGraph, otherGraph2, fpyGraph, fpyGraph2, fpyGraph3 } from './shared'
 import { environment } from 'src/environments/environment';
 
@@ -21,65 +21,62 @@ export class VideoplayerComponent implements OnInit   {
   countTime: number = 0;
   ip = '';
 
-  constructor(private apiservice: ApirestService) {
-
-  }
+  constructor(private apiservice: ApirestService) {}
 
   ngOnInit(): void {
     const mediaLoad = {
+      type: 'Principal',
       path: 'Videos/CyGNUSblue.png',
       id: 'load',
       id2: '',
       name: 'Logo',
-      type: 'Imagen',
+      titulo: 'Imagen',
       time: '7000'
     };
-
-
 
     this.apiservice.getGenericData('getIP').subscribe((data:any)=>{
       this.ip = data.clientIP;
     });
 
     setTimeout(() => {
-    this.apiservice.getMedia(this.ip).subscribe((data: any) => {
-      this.mediaObjs = data.Media.filter((mediaItem: any)=> {
-        return mediaItem.type === 'Video' || mediaItem.type === 'Imagen';
-      });
-      this.mediaObjs = [mediaLoad, fpyGraph, fpyGraph2, fpyGraph3, otherGraph, otherGraph2, ...this.mediaObjs ];
-    });
-  }, 1000);
-
-
-    setTimeout(() => {
-      for (let index = 1; index < this.mediaObjs.length; index++) {
-        if (this.mediaObjs[index].type === 'Video'){
-         let divMedia = document.querySelectorAll('.data-item')[index];
-         let videoR = divMedia.querySelector('.video_div') as HTMLVideoElement;
-         this.mediaObjs[index].time = (videoR.duration*1000).toString();
-        } else {
-          this.mediaObjs[index].time = '10000'
-        }
-      }
-
-      if(this.mediaObjs.length > 0){
-        this.mediaObjs.forEach((element) => {
-          if (element.time !== '') {
-            this.countTime += parseFloat(element.time);
-          }
+      this.apiservice.getMedia(this.ip).subscribe((data: any) => {
+        this.mediaObjs = data.Media.filter((mediaItem: any)=> {
+          return (mediaItem.titulo === 'Video' || mediaItem.titulo === 'Imagen') && mediaItem.type === 'Principal';
         });
-      }
+        this.mediaObjs = [mediaLoad, fpyGraph, fpyGraph2, fpyGraph3, otherGraph, otherGraph2, ...this.mediaObjs ];
+      });
 
       setTimeout(() => {
-        location.reload();
-      }, (this.countTime-5000));
+        for (let index = 1; index < this.mediaObjs.length; index++) {
+          if (this.mediaObjs[index].titulo === 'Video'){
+           let divMedia = document.querySelectorAll('.data-item')[index];
+           let videoR = divMedia.querySelector('.video_div') as HTMLVideoElement;
+           this.mediaObjs[index].time = (videoR.duration*1000).toString();
+          } else {
+            this.mediaObjs[index].time = '10000'
+          }
+        }
+
+        if(this.mediaObjs.length > 0){
+          this.mediaObjs.forEach((element) => {
+            if (element.time !== '') {
+              this.countTime += parseFloat(element.time);
+            }
+          });
+        }
+
+        setTimeout(() => {
+          location.reload();
+        }, (this.countTime-7000));
 
 
-      this.myCarousel =  document.querySelector('#carouselExampleInterval')!
-      this.myCarousel.addEventListener('slid.bs.carousel', () => {
-        this.validVideo();
-      });
-    }, 2000);
+        this.myCarousel =  document.querySelector('#carouselExampleInterval')!
+        this.myCarousel.addEventListener('slid.bs.carousel', () => {
+          this.validVideo();
+        });
+      }, 3000);
+
+    }, 1000);
 
   }
 

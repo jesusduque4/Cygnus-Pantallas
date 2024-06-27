@@ -14,7 +14,7 @@ import { fpyGraph, fpyGraph2, fpyGraph3, otherGraph, otherGraph2 } from '../../s
 export class FpyGraphsComponent implements OnInit {
   @Input() id?: string = '';
   @Input() id2?: string = '';
-  @Input() type?: string = '';
+  @Input() titulo?: string = '';
 
 
   constructor(private apiservice: ApirestService){

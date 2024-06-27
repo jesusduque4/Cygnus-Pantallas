@@ -9,6 +9,7 @@ id:   string;
 id2?: string;
 name: string;
 type: string;
+titulo: string;
 time: string;
 }
 

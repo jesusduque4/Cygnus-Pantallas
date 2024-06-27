@@ -24,7 +24,7 @@ export class MarquesinaComponent implements OnInit {
     setTimeout(() => {
       this.apiService.getMedia(this.ip).subscribe((data: any)=> {
         this.notice = data.Media.filter((mediaItem: any)=> {
-          return mediaItem.type === 'Marquesina';
+          return mediaItem.titulo === 'Marquesina';
         });
       })
     }, 1000);

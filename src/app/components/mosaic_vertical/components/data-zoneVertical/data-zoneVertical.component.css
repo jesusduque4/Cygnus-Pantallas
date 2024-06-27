@@ -1,0 +1,34 @@
+.divVersion {
+  display: flex;
+  justify-content: right;
+  height: 3vh;
+}
+
+.bodyMedia{
+  height: 84vh;
+}
+
+.logVersion{
+  color: white;
+  display: flex;
+  justify-content: right;
+  margin: 10px;
+}
+
+.mediaZone{
+  height: 89vh;
+  background: linear-gradient(to top, rgb(199, 213, 255), #5792CE);
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.imagen_div {
+  height: 85vh;
+  justify-content: center;
+  display: flex;
+}
+
+.imagen_content{
+  display: flex;
+  justify-content: center;
+}

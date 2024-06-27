@@ -1,0 +1,7 @@
+<spinner *ngIf="refresh === 0"></spinner>
+<div class="mainView">    
+    <header-vertical></header-vertical>
+    <data-zone-vertical (refreshChange)="onRefreshChange($event)"></data-zone-vertical>
+    <marquesina-vertical></marquesina-vertical>
+</div>
+  

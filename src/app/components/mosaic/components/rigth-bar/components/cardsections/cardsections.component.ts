@@ -150,7 +150,7 @@ export class CardsectionsComponent implements OnInit {
         this.createChart('barMS2', 'MSFT', this.asistMS[1]);
         this.createChart('barHP3', 'HP',   this.asistHP[2]);
         this.createChart('barMS3', 'MSFT', this.asistMS[2]);
-      }, 2000);
+      }, 4000);
 
     }
 
@@ -193,7 +193,7 @@ export class CardsectionsComponent implements OnInit {
 
 
   private createChart(id: string, labels: string, dataValue: number) {
-
+    debugger;
     const existingChart = Chart.getChart(id); // Obtener el gráfico existente si lo hay
     if (existingChart) {
       existingChart.destroy(); // Destruir el gráfico existente si existe

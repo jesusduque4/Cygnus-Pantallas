@@ -1,0 +1,37 @@
+<div class="mediaZone">
+  <div class="divVersion row">
+      <p class="logVersion"> PRD-2024062601 </p>
+  </div>
+  <div class="bodyMedia">
+      <div id="carouselVerticalInterval" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+              <div *ngFor="let media of mediaObjs; let i = index" class="carousel-item" [ngClass]="{'active': i === 0}" data-bs-interval="10000">
+                  <div class="imagen_content">
+                    <img [src]="media.path" class="imagen_div"> 
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<!-- <div id="carouselVerticalInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item data-item " id="imagen_content" *ngFor="let media of mediaObjs; let i = index" [ngClass]="{'active': i === 0}" data-bs-interval="10000">
+      <img [src]="media.path" class="imagen_div">
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <div id="carouselVerticalInterval" class="carousel slide" data-ride="carousel" data-interval="10000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="//10.19.17.32/CygnusFiles/PRD/Master/VideosRecepcion/MOSAICO_VERTICAL/FILECOM300_2494/19JUN- Chill out colores-02.jpg" class="imagen_div" alt="Imagen 1">
+    </div>
+    <div class="carousel-item">
+      <img src="//10.19.17.32/CygnusFiles/PRD/Master/VideosRecepcion/MOSAICO_VERTICAL/FILECOM300_2495/25JUN- La Lencha-02.jpg" class="imagen_div" alt="Imagen 2">
+    </div>
+  </div>
+</div> -->

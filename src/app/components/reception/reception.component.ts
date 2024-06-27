@@ -24,7 +24,7 @@ export class ReceptionComponent implements OnInit {
     setTimeout(() => {
       this.apiService.getMedia(this.ip).subscribe((data: any)=> {
         this.video = data.Media.filter((mediaItem: any)=> {
-          return mediaItem.type === 'Video';
+          return (mediaItem.titulo === 'Video' && mediaItem.type === 'Principal');
         });
       })
     }, 1000);

@@ -12,7 +12,7 @@ export class ApirestService implements OnDestroy {
   apiUrl = environment.apiUrl;
 
     private URL_API: string = `${this.apiUrl}/api/visuales`// Spring
-    private URL_API2: string = "http://localhost:8081/API/CyGNUS/Visuales" // UAT - Node
+   // private URL_API: string = "http://localhost:9119/api/visuales" // UAT - Node
     
   constructor(private http: HttpClient) { }
 

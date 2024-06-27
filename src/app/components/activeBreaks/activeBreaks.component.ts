@@ -20,7 +20,7 @@ export class activeBreaksComponent implements OnInit {
 
     this.apiService.getMedia('DEFAULT').subscribe((data: any)=> {
       this.video = data.Media.filter((mediaItem: any)=> {
-        return mediaItem.type === 'pausaActiva';
+        return (mediaItem.titulo === 'pausaActiva' && mediaItem.type === 'Principal');
       });
     })
 

@@ -1,17 +1,18 @@
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item data-item " id="video" *ngFor="let media of mediaObjs; let i = index" [ngClass]="{'active': i === 0}" [attr.data-bs-interval]="i | interval:media.time">
-      <ng-container *ngIf="(media.type === 'Graph_fpy') || (media.type === 'Graph_other') ">
-        <fpy-graphs [type]="media.type" [id]="media.id" [id2]="media.id2"></fpy-graphs>
+      <ng-container *ngIf="(media.titulo === 'Graph_fpy') || (media.titulo === 'Graph_other') ">
+        <fpy-graphs [titulo]="media.titulo" [id]="media.id" [id2]="media.id2"></fpy-graphs>
       </ng-container>
-      <ng-container *ngIf="media.type === 'Video'">
+      <ng-container *ngIf="media.titulo === 'Video'">
           <video #videoElement class="video_div" muted controls preload="auto">
           <!-- Este recurso esta en la API de NODE -->
           <source type="video/mp4" [src]="apiUrl+'/'+media.path">
         </video>
       </ng-container>
-      <ng-container *ngIf="media.type === 'Imagen'">
+      <ng-container *ngIf="media.titulo === 'Imagen'">
         <img [src]="apiUrl+'/'+media.path" class="imagen_div w-100">
       </ng-container>
     </div>
   </div>
+</div>

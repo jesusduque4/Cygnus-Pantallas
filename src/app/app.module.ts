@@ -23,6 +23,10 @@ import { ReceptionComponent } from './components/reception/reception.component';
 import { MarqueeComponent } from './components/activeBreaks/components/marquee/marquee.component';
 import { FpyGraphsComponent } from './components/mosaic/components/data-zone/components/videoplayer/components/fpyGraphs/fpyGraphs.component';
 import { RouterModule } from '@angular/router';
+import { HeaderVerticalComponent } from './components/mosaic_vertical/components/headerVertical/headerVertical.component';
+import { DataZoneVerticalComponent } from './components/mosaic_vertical/components/data-zoneVertical/data-zoneVertical.component';
+import { MarquesinaVerticalComponent } from './components/mosaic_vertical/components/marquesinaVertical/marquesinaVertical.component';
+import { MosaicVerticalComponent } from './components/mosaic_vertical/mosaic_vertical.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +39,17 @@ import { RouterModule } from '@angular/router';
     MarqueeComponent,
     MarquesinaComponent,
     MosaicComponent,
+    MosaicVerticalComponent,
     NavbarComponent,
     RigthBarComponent,
     SpinnerComponent,
     tittleGraph,
     VideoplayerComponent,
     WebSocketComponent,
-    ReceptionComponent
+    ReceptionComponent,
+    HeaderVerticalComponent,
+    DataZoneVerticalComponent,
+    MarquesinaVerticalComponent
   ],
   imports: [
     AppRoutingModule,

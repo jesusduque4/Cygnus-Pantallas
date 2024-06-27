@@ -1,0 +1,16 @@
+.header{
+  height: 5vh;
+  background-color: #132d48;
+}
+
+.textTitle{
+  color: white;
+  font-size: 28px;
+  margin: 20px;
+}
+
+.icones{
+  height: 4vh;
+  padding-top: 11px;
+  width: 8rem;
+}
