@@ -53,7 +53,7 @@ export class VideoplayerComponent implements OnInit   {
            let videoR = divMedia.querySelector('.video_div') as HTMLVideoElement;
            this.mediaObjs[index].time = (videoR.duration*1000).toString();
           } else {
-            this.mediaObjs[index].time = '10000'
+            this.mediaObjs[index].time = '15000'
           }
         }
 
