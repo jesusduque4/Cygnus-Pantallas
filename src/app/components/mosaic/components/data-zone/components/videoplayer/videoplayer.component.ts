@@ -43,7 +43,7 @@ export class VideoplayerComponent implements OnInit   {
         this.mediaObjs = data.Media.filter((mediaItem: any)=> {
           return (mediaItem.titulo === 'Video' || mediaItem.titulo === 'Imagen') && mediaItem.type === 'Principal';
         });
-        this.mediaObjs = [mediaLoad, fpyGraph, fpyGraph2, fpyGraph3, otherGraph, otherGraph2, ...this.mediaObjs ];
+        this.mediaObjs = [fpyGraph, fpyGraph2, fpyGraph3, otherGraph, otherGraph2, ...this.mediaObjs ];
       });
 
       setTimeout(() => {
