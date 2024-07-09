@@ -26,12 +26,12 @@ export class VideoplayerComponent implements OnInit   {
   ngOnInit(): void {
     const mediaLoad = {
       type: 'Principal',
-      path: 'Videos/CyGNUSblue.png',
+      path: '',
       id: 'load',
       id2: '',
       name: 'Logo',
       titulo: 'Imagen',
-      time: '7000'
+      time: '5000'
     };
 
     this.apiservice.getGenericData('getIP').subscribe((data:any)=>{
@@ -43,7 +43,7 @@ export class VideoplayerComponent implements OnInit   {
         this.mediaObjs = data.Media.filter((mediaItem: any)=> {
           return (mediaItem.titulo === 'Video' || mediaItem.titulo === 'Imagen') && mediaItem.type === 'Principal';
         });
-        this.mediaObjs = [fpyGraph, fpyGraph2, fpyGraph3, otherGraph, otherGraph2, ...this.mediaObjs ];
+        this.mediaObjs = [mediaLoad,fpyGraph, fpyGraph2, fpyGraph3, otherGraph, otherGraph2, ...this.mediaObjs ];
       });
 
       setTimeout(() => {
@@ -53,7 +53,7 @@ export class VideoplayerComponent implements OnInit   {
            let videoR = divMedia.querySelector('.video_div') as HTMLVideoElement;
            this.mediaObjs[index].time = (videoR.duration*1000).toString();
           } else {
-            this.mediaObjs[index].time = '15000'
+            this.mediaObjs[index].time = '10000'
           }
         }
 

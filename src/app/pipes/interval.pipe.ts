@@ -6,17 +6,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class IntervalPipe implements PipeTransform {
 
   transform(index: number, tiempo: string): string {
-    let response:string = '';
-    switch (index){
-      case index:
-        response = tiempo
-        break;
-      default:
-        response = "10000"
-        break;
+    if (index === 0) {
+      return '15000';
+    } else {
+      return tiempo;
     }
-    return response;
-
   }
+
 
 }

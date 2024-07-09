@@ -13,7 +13,7 @@ export class MosaicComponent implements OnInit {
 
   ngOnInit(): void {
       let countRefresh = 0; 
-      const checkAndRefresh = () => {
+      /*const checkAndRefresh = () => {
         if (document.querySelector('.completeDate')!.textContent === ''){
           countRefresh += 1000;
         }
@@ -25,12 +25,13 @@ export class MosaicComponent implements OnInit {
           countRefresh = 0;
           checkAndRefresh();
         }, countRefresh);
-      };
+      };*/
 
       setTimeout(() => {
-        countRefresh = 0;
-        checkAndRefresh();
-      }, 3000);
+        //countRefresh = 1;
+        this.refresh = 1;
+       // checkAndRefresh();
+      }, 5000);
     }
 
   }
