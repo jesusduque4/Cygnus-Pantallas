@@ -12,6 +12,8 @@ export class ReceptionComponent implements OnInit {
   apiUrl = environment.apiUrl;
   video: Media[] = [];
   ip = '';
+  refresh=0;
+
   constructor(private apiService: ApirestService){}
 
   ngOnInit(): void {
@@ -20,12 +22,22 @@ export class ReceptionComponent implements OnInit {
       this.ip = data.clientIP;
     });
 
+    setTimeout(() => {
+      this.refresh = 1
+    }, 3000);
+
+    setTimeout(() =>{
+      location.reload();
+    },1800000)
 
     setTimeout(() => {
       this.apiService.getMedia(this.ip).subscribe((data: any)=> {
         this.video = data.Media.filter((mediaItem: any)=> {
           return (mediaItem.titulo === 'Video' && mediaItem.type === 'Principal');
         });
+        if (this.video.length !== 1) {
+          location.reload();
+        }
       })
     }, 1000);
 

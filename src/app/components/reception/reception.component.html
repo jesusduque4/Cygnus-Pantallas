@@ -1,11 +1,9 @@
+<spinner *ngIf="refresh === 0"></spinner>
 <div class="view">
-    <div class="divVideo col-12" *ngIf="video.length > 0">
-        <video class="video_div" muted loop controls onloadedmetadata="this.muted = true">
-        <source type="video/mp4" [src]="video[0].path">
-      </video>
-    </div>
-    <div>
-      <spinner *ngIf="video.length === 0"></spinner>
-    </div>
+  <div class="divVideo col-12" *ngIf="video.length > 0">
+    <video class="video_div" muted loop controls onloadedmetadata="this.muted = true">
+      <source type="video/mp4" [src]="video[0].path">
+    </video>
   </div>
+</div>
   
